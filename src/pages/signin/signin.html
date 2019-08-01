@@ -6,13 +6,13 @@
             <i class="fas fa-user"></i>
           </div>
           <div class="login">
-   
+
           </div>
           <form action="">
-            <input type="text" class="text" name="username" placeholder="Username">
-            <input type="text" class="text" name="password" placeholder="Password">
+              <input type="text" class="text" [(ngModel)]="email" name="username" placeholder="Email">
+            <input type="password" class="text" [(ngModel)]="password" name="password" placeholder="Password">
           </form>
-          <button class="signin">Sign In</button>
+          <button class="signin" (click)="Login()">Sign In</button>
           <h5>Forget your password?</h5>
         </div>
       </body>
