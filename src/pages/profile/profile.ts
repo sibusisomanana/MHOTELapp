@@ -4,6 +4,7 @@ import { IonicPage, NavController, NavParams, LoadingController, AlertController
 import * as firebase from 'firebase';
 import { Camera, CameraOptions } from '@ionic-native/camera';
 import { SigninPage } from '../signin/signin';
+import { HomePage } from '../home/home';
 
 /**
  * Generated class for the ProfilePage page.
@@ -91,7 +92,7 @@ export class ProfilePage {
      this.user.cellno = '';
      this.user.bio = '';
     alert.present();
-    this.navCtrl.setRoot(SigninPage);
+    this.navCtrl.setRoot(HomePage);
     }else {
      let alert = this.alertCtrl.create({
        title: 'Warning!',
@@ -99,7 +100,7 @@ export class ProfilePage {
        buttons: ['Ok']
      })
      alert.present();
-     this.navCtrl.setRoot(SigninPage);
+     this.navCtrl.setRoot(HomePage);
     }
   }
 }

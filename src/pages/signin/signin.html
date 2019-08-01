@@ -6,13 +6,13 @@
               <ion-icon ios="ios-person" md="md-person"></ion-icon>
           </div>
           <div class="login">
-            <h2>SIGN UP</h2>
+            <h2>Login</h2>
           </div>
           <form action="">
             <input type="text" class="text" [(ngModel)]="email" name="password" placeholder="Email">
             <input type="password" class="text" [(ngModel)]="password" name="username" placeholder="Password">
           </form>
-          <button class="signin" > <ion-icon ios="ios-navigate" lg="lg-navigate" large></ion-icon></button>
+          <button class="signin" (click)="Login()"> Sign in <ion-icon ios="ios-navigate" lg="lg-navigate" large></ion-icon></button>
         </div>
       </body>
 

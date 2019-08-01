@@ -5,14 +5,14 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { HomePage } from '../pages/home/home';
 import { SigninPage } from '../pages/signin/signin';
-import { SignupPage } from '../pages/signup/signup';
 import * as firebase from 'firebase';
 import { firebaseConfig } from './environment';
+import { t } from '@angular/core/src/render3';
 @Component({
   templateUrl: 'app.html'
 })
 export class MyApp {
-  rootPage:any = SignupPage;
+ rootPage:any ;
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
     platform.ready().then(() => {
@@ -21,8 +21,18 @@ export class MyApp {
       statusBar.styleDefault();
       splashScreen.hide();
       firebase.initializeApp(firebaseConfig);
+      this.userLoggedIn();
     });
 
+  }
+  userLoggedIn(){
+    firebase.auth().onAuthStateChanged((user)=>{
+      if(user){
+        this.rootPage = HomePage;
+      } else {
+        this.rootPage = SigninPage;
+      }
+    })
   }
 }
 
