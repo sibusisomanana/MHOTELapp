@@ -13,20 +13,13 @@
             <i class="fas fa-user"></i>
           </div>
           <div class="login">
-   
+
           </div>
           <form action="">
-            <input type="text" class="text" name="username" placeholder="fullname">
-            <input type="text" class="text" name="password" placeholder="Phone number">
-             <input type="text" class="text" name="username" placeholder="Bio">
-            <input type="text" class="text" name="password" placeholder="Email">
-            <input type="text" class="text" name="username" placeholder="Password">
- 
+            <input type="text" class="text" [(ngModel)]="email" name="password" placeholder="Email">
+            <input type="password" class="text" [(ngModel)]="password" name="username" placeholder="Password">
           </form>
-          <button class="signin">Upload Profile Picture</button>
-          <button  class="signin">Sign In</button>
-     
-      
+          <button class="signin" (click)="createAccount()">Sign Up</button>
         </div>
       </body>
 

@@ -6,6 +6,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { HomePage } from '../pages/home/home';
 import { SigninPage } from '../pages/signin/signin';
 import { SignupPage } from '../pages/signup/signup';
+import * as firebase from 'firebase';
+import { firebaseConfig } from './environment';
 @Component({
   templateUrl: 'app.html'
 })
@@ -18,7 +20,9 @@ export class MyApp {
       // Here you can do any higher level native things you might need.
       statusBar.styleDefault();
       splashScreen.hide();
+      firebase.initializeApp(firebaseConfig);
     });
+
   }
 }
 
