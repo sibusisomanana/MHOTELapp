@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, LoadingController, AlertController } from 'ionic-angular';
+import * as firebase from 'firebase';
+import { HomePage } from '../home/home';
 
 /**
  * Generated class for the SigninPage page.
@@ -15,11 +17,42 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class SigninPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  email;
+  password;
+  constructor(public navCtrl: NavController, public navParams: NavParams, public loading: LoadingController, public alertCtrl: AlertController) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad SigninPage');
+   // console.log('ionViewDidLoad SigninPage');
+  }
+  Login(){
+    let loaders = this.loading.create({
+      content: 'Please wait..',
+      duration: 3000});
+      loaders.present();
+    firebase.auth().signInWithEmailAndPassword(this.email, this.password)
+    .then( res =>{
+      console.log(res);
+      this.navCtrl.push(HomePage);
+    })
+
+    .catch(function(error) {
+
+      const alert = this.alertCtrl.create({
+        title: error.code,
+        subTitle: error.message,
+        buttons: ['OK']
+      });
+      alert.present();
+      // Handle Errors here.
+     // var errorCode = error.code;
+    //  var errorMessage = error.message;
+//console.log(errorCode + errorMessage);
+
+
+    });
+
+
   }
 
 }

@@ -9,6 +9,7 @@ import { Camera } from '@ionic-native/camera';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { SignupPage } from '../pages/signup/signup';
+import { SigninPage } from '../pages/signin/signin';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { SignupPage } from '../pages/signup/signup';
     MyApp,
     HomePage,
     SignupPage,
-    ProfilePage
+    ProfilePage,
+    SigninPage
   ],
   imports: [
     BrowserModule,
@@ -27,7 +29,8 @@ import { SignupPage } from '../pages/signup/signup';
     MyApp,
     HomePage,
     SignupPage,
-    ProfilePage
+    ProfilePage,
+    SigninPage
   ],
   providers: [
     StatusBar,

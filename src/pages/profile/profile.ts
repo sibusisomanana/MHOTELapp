@@ -1,8 +1,9 @@
 import { user } from './model/user';
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, LoadingController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, LoadingController, AlertController } from 'ionic-angular';
 import * as firebase from 'firebase';
 import { Camera, CameraOptions } from '@ionic-native/camera';
+import { SigninPage } from '../signin/signin';
 
 /**
  * Generated class for the ProfilePage page.
@@ -23,10 +24,10 @@ export class ProfilePage {
   user = {} as user;
   myphoto;
   storageRef = firebase.storage().ref();
-  
-  constructor(public navCtrl: NavController, public navParams: NavParams, private camera: Camera, public loading: LoadingController) {
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, private camera: Camera, public loading: LoadingController, public alertCtrl: AlertController) {
     this.userID = this.navParams.data;
-    this.ref =  firebase.database().ref('users/profile'  + this.userID);
+    this.ref =  firebase.database().ref('users/'  + this.userID);
   }
 
   ionViewDidLoad() {
@@ -41,7 +42,7 @@ export class ProfilePage {
     loaders.present();
    // let storageRef = firebase.storage().ref();
     const filename = Math.floor(Date.now() / 1000);
-    const imageRef = this.storageRef.child(`my-rooms/${filename}.jpg`);
+    const imageRef = this.storageRef.child(`user-profile/${filename}.jpg`);
 
     imageRef.putString(this.myphoto, firebase.storage.StringFormat.DATA_URL)
     .then((snapshot) => {
@@ -70,7 +71,35 @@ export class ProfilePage {
      // Handle error
     });
   }
-  createProfile(user){
+  createProfile(user : user){
+    this.upload()
+    let alert = this.alertCtrl.create({
+      title: 'Creating profile..',
+      subTitle: 'Done!',
+      buttons: ['Ok']
+    })
 
+    if(this.myphoto != '') {
+      let newUser = this.ref.push();
+    newUser.set({
+      Fullname: user.fullname,
+      Cellphone: user.cellno,
+      Bio: user.bio,
+      Profile_pic: this.myphoto
+    });
+     this.user.fullname = null;
+     this.user.cellno = '';
+     this.user.bio = '';
+    alert.present();
+    this.navCtrl.setRoot(SigninPage);
+    }else {
+     let alert = this.alertCtrl.create({
+       title: 'Warning!',
+       subTitle: 'You must upload image first',
+       buttons: ['Ok']
+     })
+     alert.present();
+     this.navCtrl.setRoot(SigninPage);
+    }
   }
 }
