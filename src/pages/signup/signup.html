@@ -10,16 +10,16 @@
     <body>
         <div id="wrap">
           <div id="icon">
-            <i class="fas fa-user"></i>
+              <ion-icon ios="ios-person" md="md-person"></ion-icon>
           </div>
           <div class="login">
-
+            <h2>SIGN UP</h2>
           </div>
           <form action="">
             <input type="text" class="text" [(ngModel)]="email" name="password" placeholder="Email">
             <input type="password" class="text" [(ngModel)]="password" name="username" placeholder="Password">
           </form>
-          <button class="signin" (click)="createAccount()">Sign Up</button>
+          <button class="signin" (click)="createAccount()"> <ion-icon ios="ios-navigate" lg="lg-navigate" large></ion-icon></button>
         </div>
       </body>
 
