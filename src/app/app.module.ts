@@ -1,3 +1,4 @@
+import { ViewRoomPage } from './../pages/view-room/view-room';
 import { ProfilePage } from './../pages/profile/profile';
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
@@ -18,7 +19,8 @@ import { SigninPage } from '../pages/signin/signin';
     HomePage,
     SignupPage,
     ProfilePage,
-    SigninPage
+    SigninPage,
+    ViewRoomPage
   ],
   imports: [
     BrowserModule,
@@ -30,7 +32,8 @@ import { SigninPage } from '../pages/signin/signin';
     HomePage,
     SignupPage,
     ProfilePage,
-    SigninPage
+    SigninPage,
+    ViewRoomPage
   ],
   providers: [
     StatusBar,

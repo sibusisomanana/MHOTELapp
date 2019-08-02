@@ -12,13 +12,16 @@
 
 <ion-content >
       <ion-list >
-          <ion-item *ngFor="let item of users">
-              <img src="{{item.Profile_pic}}" height="50" width="50" style="border-radius: 50%">
-           <h3>{{ item.Fullname }}</h3>
-            <p> {{ item.Cellphone }}</p>
-            <p>{{ item.Bio }} </p>
-          </ion-item>
-          </ion-list>
+          <ion-item *ngFor="let item of rooms">
+              <img src="{{item.Pic}}" height="250" width="250" style="border-radius: 50%">
+           <h3>{{ item.Feautures }}</h3>
+            <p> {{ item.Hotelname }}</p>
+            <p>R {{ item.Price }} p.m</p>
 
-          
+            <button ion-button (click)="viewRoom($event, item.key)">View</button>
+          </ion-item>
+
+      </ion-list>
+
+
 </ion-content>
