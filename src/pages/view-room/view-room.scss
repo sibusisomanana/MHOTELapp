@@ -1,3 +1,14 @@
 page-view-room {
+    @import url('https://fonts.googleapis.com/css?family=Righteous|Titillium+Web&display=swap');
+    .container{
 
+        display: flex;
+        flex-direction: column;
+        font-family: 'Titillium Web', sans-serif;
+        background: linear-gradient(rgba(0, 29, 82, 0.603),rgba(41, 31, 13, 0.781));
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 100%;
+        width: 100%;
+    }
 }

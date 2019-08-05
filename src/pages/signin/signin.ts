@@ -4,6 +4,7 @@ import { IonicPage, NavController, NavParams, LoadingController, AlertController
 import * as firebase from 'firebase';
 import { HomePage } from '../home/home';
 
+
 /**
  * Generated class for the SigninPage page.
  *

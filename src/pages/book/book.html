@@ -22,15 +22,18 @@
       <ion-input type="date" [(ngModel)]="date_out" value=""></ion-input>
     </ion-item>
     <ion-item>
-      <ion-label fixed>Number of people</ion-label>
-      <ion-input type="number" [(ngModel)]="people" value=""></ion-input>
+      <ion-label fixed>No: Children</ion-label>
+      <ion-input type="number" [(ngModel)]="children" value=""></ion-input>
     </ion-item>
     <ion-item>
-      <ion-label fixed>Number of rooms</ion-label>
-      <ion-input type="number" [(ngModel)]="rooms" value=""></ion-input>
+      <ion-label fixed>No: Adults</ion-label>
+      <ion-input type="number" [(ngModel)]="adults" value=""></ion-input>
     </ion-item>
-
-    <button ion-button (click)="gotoPay()">Pay</button>
+    <ion-item>
+        <ion-label fixed>No: Rooms</ion-label>
+        <ion-input type="number" [(ngModel)]="rooms" value=""></ion-input>
+      </ion-item>
+    <button ion-button (click)="gotoPay()" full>PAY</button>
     </ion-list>
 
 </ion-content>
