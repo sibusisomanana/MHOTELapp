@@ -28,7 +28,7 @@ export class ProfilePage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private camera: Camera, public loading: LoadingController, public alertCtrl: AlertController) {
     this.userID = this.navParams.data;
-    this.ref =  firebase.database().ref('users/'  + this.userID);
+    this.ref =  firebase.database().ref('users/' + this.userID);
   }
 
   ionViewDidLoad() {
@@ -100,7 +100,7 @@ export class ProfilePage {
        buttons: ['Ok']
      })
      alert.present();
-     this.navCtrl.setRoot(HomePage);
+     this.navCtrl.setRoot(ProfilePage);
     }
   }
 }

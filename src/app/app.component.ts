@@ -8,6 +8,7 @@ import { SigninPage } from '../pages/signin/signin';
 import * as firebase from 'firebase';
 import { firebaseConfig } from './environment';
 import { t } from '@angular/core/src/render3';
+
 @Component({
   templateUrl: 'app.html'
 })
@@ -26,8 +27,9 @@ export class MyApp {
 
   }
   userLoggedIn(){
+  //let ref = firebase.database().ref('/users' + firebase.auth().currentUser.uid)
     firebase.auth().onAuthStateChanged((user)=>{
-      if(user){
+      if(user.uid != null){
         this.rootPage = HomePage;
       } else {
         this.rootPage = SigninPage;

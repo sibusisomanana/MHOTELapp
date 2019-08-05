@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, LoadingController } from 'ionic-angular';
 import * as firebase from 'firebase';
 import { ProfilePage } from '../profile/profile';
 /**
@@ -19,7 +19,7 @@ export class SignupPage {
   email;
   password;
   id;
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public loading: LoadingController ) {
   }
 
   ionViewDidLoad() {
@@ -28,16 +28,22 @@ export class SignupPage {
 
 
   createAccount(){
+    let loaders = this.loading.create({
+      content: 'Processing..',
+      duration: 3000
+    })
+
+    loaders.present();
     firebase.auth().createUserWithEmailAndPassword(this.email, this.password).then(res=>{
    this.id = res.user.uid;
-    this.navCtrl.push(ProfilePage, this.id);
+   this.navCtrl.setRoot(ProfilePage, this.id);
     })
     //this.navCtrl.push(ProfilePage)
-
 
     .catch(function(error) {
      return error;
     });
 
+  //
   }
 }

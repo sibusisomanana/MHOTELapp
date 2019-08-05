@@ -34,12 +34,12 @@ export class HomePage {
 
   viewRoom(event, key)
   {
-    this.navCtrl.setRoot(ViewRoomPage, key )
+    this.navCtrl.push(ViewRoomPage, key )
   }
   logout(){
     firebase.auth().signOut().then(() => {
       console.log('logged Out');
-       this.navCtrl.push(SigninPage);
+       this.navCtrl.setRoot(SigninPage);
     }).catch(function(error) {
       // An error happened.
     });
