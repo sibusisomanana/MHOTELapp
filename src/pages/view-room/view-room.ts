@@ -1,3 +1,4 @@
+import { BookPage } from './../book/book';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import * as firebase from 'firebase';
@@ -17,6 +18,7 @@ import { snapshotToArray } from '../../app/environment';
 })
 export class ViewRoomPage {
 
+//bookRoom = [];
   ref = firebase.database().ref('rooms/');
   key;
   rooms;
@@ -32,4 +34,20 @@ export class ViewRoomPage {
   //  console.log('ionViewDidLoad ViewRoomPage');
   }
 
+  book(price, room){
+    let obj ={
+      room:room ,
+      price:price
+
+    }
+
+    arry.push(obj);
+    console.log(arry);
+
+    this.navCtrl.push(BookPage);
+  }
+
 }
+var arry = new Array()
+
+export default arry ;

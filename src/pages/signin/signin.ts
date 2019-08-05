@@ -1,3 +1,4 @@
+import { SignupPage } from './../signup/signup';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, LoadingController, AlertController } from 'ionic-angular';
 import * as firebase from 'firebase';
@@ -34,7 +35,7 @@ export class SigninPage {
     firebase.auth().signInWithEmailAndPassword(this.email, this.password)
     .then( res =>{
       console.log(res);
-      this.navCtrl.push(HomePage);
+      this.navCtrl.setRoot(HomePage);
     })
 
     .catch(function(error) {
@@ -55,8 +56,8 @@ export class SigninPage {
 
 
   }
-  registrationPage(){
-    this.navCtrl.setRoot(SignupPage)
+  register(){
+    this.navCtrl.push(SignupPage);
   }
 
 }

@@ -1,3 +1,6 @@
+import { LastPage } from './../pages/last/last';
+import { PaymentPage } from './../pages/payment/payment';
+import { BookPage } from './../pages/book/book';
 import { ViewRoomPage } from './../pages/view-room/view-room';
 import { ProfilePage } from './../pages/profile/profile';
 import { BrowserModule } from '@angular/platform-browser';
@@ -20,7 +23,10 @@ import { SigninPage } from '../pages/signin/signin';
     SignupPage,
     ProfilePage,
     SigninPage,
-    ViewRoomPage
+    ViewRoomPage,
+    BookPage,
+    PaymentPage,
+    LastPage
   ],
   imports: [
     BrowserModule,
@@ -33,7 +39,10 @@ import { SigninPage } from '../pages/signin/signin';
     SignupPage,
     ProfilePage,
     SigninPage,
-    ViewRoomPage
+    ViewRoomPage,
+    BookPage,
+    PaymentPage,
+    LastPage
   ],
   providers: [
     StatusBar,
