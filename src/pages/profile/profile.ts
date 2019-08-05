@@ -5,6 +5,7 @@ import * as firebase from 'firebase';
 import { Camera, CameraOptions } from '@ionic-native/camera';
 import { SigninPage } from '../signin/signin';
 import { HomePage } from '../home/home';
+import { snapshotToArray } from '../../app/environment';
 
 /**
  * Generated class for the ProfilePage page.
@@ -24,11 +25,18 @@ export class ProfilePage {
   ref;
   user = {} as user;
   myphoto;
+  prof;
   storageRef = firebase.storage().ref();
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private camera: Camera, public loading: LoadingController, public alertCtrl: AlertController) {
     this.userID = this.navParams.data;
     this.ref =  firebase.database().ref('users/' + this.userID);
+    this.ref.on('value', resp => {
+      this.prof = snapshotToArray(resp);
+      console.log(this.prof);
+
+      })
+
   }
 
   ionViewDidLoad() {

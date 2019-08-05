@@ -40,7 +40,7 @@ export class LastPage {
   this.navCtrl.setRoot(HomePage);
   }
   goBookings(){
-  this.navCtrl.setRoot(ProfilePage);
+    this.navCtrl.setRoot(ProfilePage);
   }
 
 }

@@ -29,7 +29,7 @@ export class MyApp {
   userLoggedIn(){
   //let ref = firebase.database().ref('/users' + firebase.auth().currentUser.uid)
     firebase.auth().onAuthStateChanged((user)=>{
-      if(user.uid != null){
+      if(user){
         this.rootPage = HomePage;
       } else {
         this.rootPage = SigninPage;

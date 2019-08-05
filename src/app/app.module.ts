@@ -1,3 +1,4 @@
+import { UserProfilePage } from './../pages/user-profile/user-profile';
 import { LastPage } from './../pages/last/last';
 import { PaymentPage } from './../pages/payment/payment';
 import { BookPage } from './../pages/book/book';
@@ -26,7 +27,8 @@ import { SigninPage } from '../pages/signin/signin';
     ViewRoomPage,
     BookPage,
     PaymentPage,
-    LastPage
+    LastPage,
+    UserProfilePage
   ],
   imports: [
     BrowserModule,
@@ -42,7 +44,8 @@ import { SigninPage } from '../pages/signin/signin';
     ViewRoomPage,
     BookPage,
     PaymentPage,
-    LastPage
+    LastPage,
+    UserProfilePage
   ],
   providers: [
     StatusBar,

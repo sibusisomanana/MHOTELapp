@@ -1,3 +1,4 @@
+import { UserProfilePage } from './../user-profile/user-profile';
 import { ViewRoomPage } from './../view-room/view-room';
 import { Component } from '@angular/core';
 import { IonicPage, NavController } from 'ionic-angular';
@@ -44,5 +45,8 @@ export class HomePage {
       // An error happened.
     });
 
+  }
+  profile(){
+    this.navCtrl.push(UserProfilePage);
   }
 }
