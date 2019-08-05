@@ -1,3 +1,4 @@
+import { ViewRoomPage } from './../view-room/view-room';
 import { Component } from '@angular/core';
 import { IonicPage, NavController } from 'ionic-angular';
 import * as firebase from 'firebase';
@@ -14,27 +15,31 @@ import { snapshotToArray } from '../../app/environment';
 
 @Component({
   selector: 'page-home',
-  templateUrl: 'home.html',
+  templateUrl: 'home.html'
 })
 export class HomePage {
 
-  users;
-  userID = firebase.auth().currentUser.uid;
-  ref =  firebase.database().ref('users/'  + this.userID);
+  rooms;
+ // userID = firebase.auth().currentUser.uid;
+  ref =  firebase.database().ref('rooms/');
   constructor(public navCtrl: NavController) {
   //console.log(firebase.auth().currentUser.email);
   this.ref.on('value', resp => {
-    this.users = snapshotToArray(resp);
-    console.log(this.users);
+    this.rooms = snapshotToArray(resp);
+    console.log(this.rooms);
 
     })
 
   }
 
+  viewRoom(event, key)
+  {
+    this.navCtrl.setRoot(ViewRoomPage, key )
+  }
   logout(){
     firebase.auth().signOut().then(() => {
       console.log('logged Out');
-       this.navCtrl.setRoot(SigninPage);
+       this.navCtrl.push(SigninPage);
     }).catch(function(error) {
       // An error happened.
     });
