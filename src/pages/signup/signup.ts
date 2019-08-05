@@ -24,6 +24,7 @@ export class SignupPage {
 
   ionViewDidLoad() {
     //console.log('ionViewDidLoad SignupPage');
+
   }
 
 
@@ -36,7 +37,7 @@ export class SignupPage {
     loaders.present();
     firebase.auth().createUserWithEmailAndPassword(this.email, this.password).then(res=>{
    this.id = res.user.uid;
-   this.navCtrl.setRoot(ProfilePage, this.id);
+   this.navCtrl.setRoot(ProfilePage, this.id)
     })
     //this.navCtrl.push(ProfilePage)
 

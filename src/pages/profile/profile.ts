@@ -30,7 +30,7 @@ export class ProfilePage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private camera: Camera, public loading: LoadingController, public alertCtrl: AlertController) {
     this.userID = this.navParams.data;
-    this.ref =  firebase.database().ref('users/' + this.userID);
+    this.ref =  firebase.database().ref('users/');
     this.ref.on('value', resp => {
       this.prof = snapshotToArray(resp);
       console.log(this.prof);
@@ -94,6 +94,7 @@ export class ProfilePage {
       Fullname: user.fullname,
       Cellphone: user.cellno,
       Bio: user.bio,
+      UID: firebase.auth().currentUser.uid,
       Profile_pic: this.myphoto
     });
      this.user.fullname = null;

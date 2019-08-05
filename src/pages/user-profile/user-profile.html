@@ -11,5 +11,16 @@
 </ion-header>
 
 <ion-content padding>
+  <div *ngFor="let p of profile;">
+    <span>{{p.Room}}</span>
+    <span>R {{p.Price}}</span>
+  </div>
 
+  <div *ngFor="let se of user;">
+    <span>{{se.Fullname}}</span>
+    <span>{{se.Cellphone}}</span>
+    <span>{{se.Bio}}</span>
+    <img src="{{se.Profile_pic}}" height="100" width="100" style="border-radius: 50%">
+  </div>
+  <button ion-button (click)="home()">Done</button>
 </ion-content>

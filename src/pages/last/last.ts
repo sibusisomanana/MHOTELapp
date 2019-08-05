@@ -6,6 +6,7 @@ import * as firebase from 'firebase';
 import { snapshotToArray } from '../../app/environment';
 import arry from '../view-room/view-room';
 import arr from '../book/book';
+import { UserProfilePage } from '../user-profile/user-profile';
 
 /**
  * Generated class for the LastPage page.
@@ -40,7 +41,7 @@ export class LastPage {
   this.navCtrl.setRoot(HomePage);
   }
   goBookings(){
-    this.navCtrl.setRoot(ProfilePage);
+    this.navCtrl.setRoot(UserProfilePage);
   }
 
 }

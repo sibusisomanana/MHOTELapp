@@ -1,7 +1,7 @@
 import { UserProfilePage } from './../user-profile/user-profile';
 import { ViewRoomPage } from './../view-room/view-room';
 import { Component } from '@angular/core';
-import { IonicPage, NavController } from 'ionic-angular';
+import { IonicPage, NavController, AlertController, LoadingController } from 'ionic-angular';
 import * as firebase from 'firebase';
 import { SigninPage } from '../signin/signin';
 import { snapshotToArray } from '../../app/environment';
@@ -23,14 +23,17 @@ export class HomePage {
   rooms;
  // userID = firebase.auth().currentUser.uid;
   ref =  firebase.database().ref('rooms/');
-  constructor(public navCtrl: NavController) {
+  constructor(public navCtrl: NavController, private alertCtrl: AlertController, public loading: LoadingController) {
   //console.log(firebase.auth().currentUser.email);
   this.ref.on('value', resp => {
     this.rooms = snapshotToArray(resp);
     console.log(this.rooms);
 
     })
-
+   this.loading.create({
+      content: 'Loading..',
+      duration: 3000
+    }).present();
   }
 
   viewRoom(event, key)
@@ -41,8 +44,16 @@ export class HomePage {
     firebase.auth().signOut().then(() => {
       console.log('logged Out');
        this.navCtrl.setRoot(SigninPage);
-    }).catch(function(error) {
+    }).catch((error) => {
       // An error happened.
+     let errorCode = error.code;
+      let errorMessage = error.message;
+      this.alertCtrl.create({
+        title: errorCode,
+        subTitle: errorMessage,
+        buttons: ['Try again']
+      }).present()
+
     });
 
   }

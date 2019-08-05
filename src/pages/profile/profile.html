@@ -6,7 +6,7 @@
 -->
 <ion-header>
   <ion-navbar>
-    <ion-title>profile</ion-title>
+    <ion-title>Profile</ion-title>
   </ion-navbar>
 </ion-header>
 
@@ -17,7 +17,7 @@
      <ion-input type="text" [(ngModel)]="user.fullname" placeholder="Full name"></ion-input>
      <ion-input type="tel" [(ngModel)]="user.cellno" placeholder="Cellphone number"></ion-input>
      <ion-input type="text" [(ngModel)]="user.bio" placeholder="Bio"></ion-input>
-     <button ion-button clear (click)="createProfile(user)">Create profile</button>
+     <button ion-button (click)="createProfile(user)">Create profile</button>
 
   </div>
 

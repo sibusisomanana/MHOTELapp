@@ -1,5 +1,7 @@
+import { ProfilePage } from './../profile/profile';
+import { HomePage } from './../home/home';
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
 import * as firebase from 'firebase';
 import { snapshotToArray } from '../../app/environment';
 
@@ -17,19 +19,43 @@ import { snapshotToArray } from '../../app/environment';
 })
 export class UserProfilePage {
   profile;
+  user;
   userID = firebase.auth().currentUser.uid;
-   ref =  firebase.database().ref('bookings/');
-   constructor(public navCtrl: NavController) {
+   ref =  firebase.database().ref();
+   constructor(public navCtrl: NavController, private alert: AlertController) {
    //console.log(firebase.auth().currentUser.email);
-   this.ref.orderByKey().on('value', resp => {
-    this.profile = resp.val().UID;
-      console.log(this.profile);
+   this.ref.child('bookings').orderByChild('UID').equalTo(this.userID).on('value', resp => {
+     console.log(resp.val());
+
+     if(resp.exists()) {
+        this.profile = snapshotToArray(resp);
+     }else {
+        this.alert.create({
+          title: 'empty',
+          subTitle: 'Please create a profile first',
+          buttons: ['ok']
+        }).present()
+
+     }
     })
+
+    this.ref.child('users').orderByChild('UID').equalTo(this.userID).on('value', resp => {
+      console.log(resp.val());
+
+      if(resp.exists()) {
+         this.user = snapshotToArray(resp);
+      }else {
+      this.navCtrl.setRoot(ProfilePage);
+      }
+     })
 
    }
 
   ionViewDidLoad() {
    // console.log('ionViewDidLoad UserProfilePage');
+  }
+  home(){
+    this.navCtrl.setRoot(HomePage);
   }
 
 }
