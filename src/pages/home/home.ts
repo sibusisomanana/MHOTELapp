@@ -11,10 +11,10 @@ import { snapshotToArray } from '../../app/environment';
  * Ionic pages and navigation.
  */
 
-@IonicPage()
+
 @Component({
-  selector: 'page-profile',
-  templateUrl: 'profile.html',
+  selector: 'page-home',
+  templateUrl: 'home.html',
 })
 export class HomePage {
 

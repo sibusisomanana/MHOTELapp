@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, LoadingController, AlertController } from 'ionic-angular';
 import * as firebase from 'firebase';
 import { HomePage } from '../home/home';
+import { SignupPage } from '../signup/signup';
 
 /**
  * Generated class for the SigninPage page.
@@ -53,6 +54,9 @@ export class SigninPage {
     });
 
 
+  }
+  registrationPage(){
+    this.navCtrl.setRoot(SignupPage)
   }
 
 }

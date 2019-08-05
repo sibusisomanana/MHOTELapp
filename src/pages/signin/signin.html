@@ -1,19 +1,34 @@
 
-<ion-content >
-    <body>
-        <div id="wrap">
-          <div id="icon">
-              <ion-icon ios="ios-person" md="md-person"></ion-icon>
-          </div>
-          <div class="login">
-            <h2>Login</h2>
-          </div>
-          <form action="">
-            <input type="text" class="text" [(ngModel)]="email" name="password" placeholder="Email">
-            <input type="password" class="text" [(ngModel)]="password" name="username" placeholder="Password">
-          </form>
-          <button class="signin" (click)="Login()"> Sign in <ion-icon ios="ios-navigate" lg="lg-navigate" large></ion-icon></button>
-        </div>
-      </body>
+<ion-content>
+  <div class="container">
+  
+      <div class="top"></div>
+    
+      <div class="box">
+        <h1><strong>Welcome</strong></h1>
+        <ion-list>
 
-</ion-content>
+          <ion-item>
+            <ion-input type="text"  [(ngModel)]="email" placeholder="Username"></ion-input>
+          </ion-item>
+        <br>
+          <ion-item>
+            <ion-input type="password" [(ngModel)]="password"  placeholder="Password"></ion-input>
+          </ion-item>
+        
+        </ion-list>
+      
+        <button class="signin" (click)="Login()" ion-button full> Sign in <ion-icon ios="ios-navigate" lg="lg-navigate" large></ion-icon></button>
+           
+        <div class="bottom-text">
+            Don't have account? <a  (click)="registrationPage()">Sign Up</a>
+          </div>
+            
+
+           
+      </div>
+      
+    </div>
+
+    
+    </ion-content>

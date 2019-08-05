@@ -1,3 +1,57 @@
 page-profile {
+    @import url('https://fonts.googleapis.com/css?family=Righteous|Titillium+Web&display=swap');
+    .container{
+
+        display: flex;
+        flex-direction: column;
+        font-family: 'Titillium Web', sans-serif;
+        background: linear-gradient(rgba(0, 29, 82, 0.603),rgba(24, 23, 21, 0.781));
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 100%;
+        width: 100%;
+    }
+    
+    .top{
+        display: flex;
+        height: 100%;
+
+    }
+    
+    .box{
+        display: flex;
+        flex-direction: column;
+
+        margin-left: 20px;
+        margin-right: 20px;
+        position: relative;
+        bottom: 100px;
+        border-radius: 20px;
+        text-align: center;
+
+   
+    }
+    .bottom-text{
+        margin-top: 40px;
+        text-align: center;
+        font-size: 17px;
+        color:rgb(250, 248, 248);
+    
+    }
+ 
+  
+
+  
+    .person{
+        font-size: 30px;
+    }
+    h2{
+        color:rgb(255, 254, 254);
+    }
+    h1{
+        color:white;
+    }
+    
+    
 
 }
