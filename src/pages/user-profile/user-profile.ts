@@ -29,14 +29,16 @@ export class UserProfilePage {
 
      if(resp.exists()) {
         this.profile = snapshotToArray(resp);
-     }else {
-        this.alert.create({
-          title: 'empty',
-          subTitle: 'Please create a profile first',
-          buttons: ['ok']
-        }).present()
-
      }
+
+    //  else {
+    //     this.alert.create({
+    //       title: 'empty',
+    //       subTitle: 'Please create a profile first',
+    //       buttons: ['ok']
+    //     }).present()
+
+    //  }
     })
 
     this.ref.child('users').orderByChild('UID').equalTo(this.userID).on('value', resp => {
