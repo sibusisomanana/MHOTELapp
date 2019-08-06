@@ -14,14 +14,40 @@
 <ion-content >
       <ion-list >
           <ion-item *ngFor="let item of rooms">
-              <img src="{{item.Pic}}" height="300" width="350" style="border-radius: 5%">
-           <h3>{{ item.Feautures }}</h3>
-            <p> {{ item.Hotelname }}</p>
-            <p>R {{ item.Price }} p.m</p>
-
-            <button ion-button (click)="viewRoom($event, item.key)" full>VIEW</button>
+              <img src="{{item.Pic}}" height="300" width="360" style="border-radius: 2%">
+            <h1> {{ item.Hotelname }}</h1>
+           <p>{{ item.Feautures }}</p>
+            
+            <p>R {{ item.Price }} p.m</p>     <div class="icon">
+                <ion-icon class="tv"ios="ios-easel" md="md-easel"></ion-icon>
+                <ion-icon class="coffee"ios="ios-cafe" md="md-cafe"></ion-icon>
+  
+                <ion-icon class="useer"ios="ios-people" md="md-people"></ion-icon>
+            </div>
+       
+            <button ion-button (click)="viewRoom($event, item.key)" full>VIEW</button> 
           </ion-item>
       </ion-list>
 
-<button ion-button (click)="profile()">Profile</button>
+
+<ion-fab right bottom >
+    <button ion-fab mini>
+        <button ion-fab (click)="profile()">  <ion-icon ios="ios-contact" md="md-contact"></ion-icon></button>
+    </button>
+  </ion-fab>
+
+  
+ <!-- <div class="container">
+
+    <div class="card-wrapper">
+      <div class="card"  *ngFor="let se of user;">
+         <img src="https://images.unsplash.com/photo-1427694012323-fb5e8b0c165b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1366&q=80" alt="card background" class="card-img">
+         <img src="{{se.Profile_pic}}" alt="profile image" class="profile-img">
+         <h1>{{se.Fullname}}</h1>
+         <p class="job-title"><strong>{{se.Cellphone}}</strong></p>
+         <p class="job-title"><strong>{{se.Bio}}</strong></p>
+      </div>
+      <button ion-button (click)="home()" full>Done</button> 
+    </div>
+  </div> -->
 </ion-content>
