@@ -84,7 +84,6 @@ export class ProfilePage {
     this.upload()
     let alert = this.alertCtrl.create({
       title: 'Creating profile..',
-      subTitle: 'Done!',
       buttons: ['Ok']
     })
 
