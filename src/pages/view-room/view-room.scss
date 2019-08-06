@@ -11,24 +11,14 @@ page-view-room {
         height: 100%;
         width: 100%;
     }
-    .card {
-        display: flex;
-        height: 120px;
-        align-items: center;
-        background-color: rgb(182, 165, 150);
-        color:white;
-        line-height: 10px;
-        // 
-      }
-      
-
+    
       img {
           border-radius: 10%;
       }
-    //   .item{
-    //       text-align: center;
+     .item{
+       text-align: center;
 
-    //   }
+     }
       .tv{
           color: rgb(104, 104, 104);
       }

@@ -29,15 +29,25 @@
           </ion-item>
       </ion-list>
 
- <button ion-button (click)="profile()">Profile</button> 
 
 <ion-fab right bottom >
     <button ion-fab mini>
-      <ion-icon name="ios-create-outline"></ion-icon>
+        <button ion-fab (click)="profile()">  <ion-icon ios="ios-contact" md="md-contact"></ion-icon></button>
     </button>
-    <ion-fab-list side="top">
-      <button ion-fab (click)="profile()">  <ion-icon ios="ios-contact" md="md-contact"></ion-icon></button>
-     
-    </ion-fab-list>
   </ion-fab>
+
+  
+ <!-- <div class="container">
+
+    <div class="card-wrapper">
+      <div class="card"  *ngFor="let se of user;">
+         <img src="https://images.unsplash.com/photo-1427694012323-fb5e8b0c165b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1366&q=80" alt="card background" class="card-img">
+         <img src="{{se.Profile_pic}}" alt="profile image" class="profile-img">
+         <h1>{{se.Fullname}}</h1>
+         <p class="job-title"><strong>{{se.Cellphone}}</strong></p>
+         <p class="job-title"><strong>{{se.Bio}}</strong></p>
+      </div>
+      <button ion-button (click)="home()" full>Done</button> 
+    </div>
+  </div> -->
 </ion-content>

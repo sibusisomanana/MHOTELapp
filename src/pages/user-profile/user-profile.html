@@ -4,56 +4,45 @@
   See http://ionicframework.com/docs/components/#navigation for more info on
   Ionic pages and navigation.
 -->
-<ion-header>
-  <ion-navbar>
-    <ion-title>Profile</ion-title>
-  </ion-navbar>
-</ion-header>
 
-<ion-content padding>
-  <div *ngFor="let p of profile;">
+
+<ion-content>
+
+
+  <!-- <div *ngFor="let p of profile;">
     <span>{{p.Room}}</span>
     <span>R {{p.Price}}</span>
   </div>
 
   <div *ngFor="let se of user;">
+      <img src="{{se.Profile_pic}}" height="100" width="100" style="border-radius: 50%"><BR>
     <span>{{se.Fullname}}</span>
     <span>{{se.Cellphone}}</span>
     <span>{{se.Bio}}</span>
-    <img src="{{se.Profile_pic}}" height="100" width="100" style="border-radius: 50%">
+    <span>{{p.Room}}</span>
+    <span>R {{p.Price}}</span>
+   
   </div>
-  <button ion-button (click)="home()">Done</button>
-</ion-content>
-<ion-card>
+  <button ion-button (click)="home()">Done</button> -->
 
-    <img src="{{se.Profile_pic}}" height="100" width="100" style="border-radius: 50%">
-    <ion-fab right top>
-      <button ion-fab>
-        <ion-icon name="pin"></ion-icon>
-      </button>
-    </ion-fab>
-  
-    <ion-item>
-        <ion-icon ios="ios-brush" md="md-brush"></ion-icon>
-      <h2>{{se.Fullname}}</h2>
-      <p>{{se.Cellphone}}</p>
-      <p>{{se.Bio}}</p>
-    </ion-item>
-  
-    <ion-item>
-        <ion-icon ios="ios-easel" md="md-easel"></ion-icon>
-        <ion-icon ios="ios-no-smoking" md="md-no-smoking"></ion-icon>
-      <h2>Institute of Fine Cocktails</h2>
-      <p>14 S. Hop Avenue, Madison, WI 53703</p>
-    </ion-item>
-  
-    <ion-item>
-      <span item-start>18 min</span>
-      <span item-start>(2.6 mi)</span>
-      <button ion-button icon-start clear item-end>
-        <ion-icon name="navigate"></ion-icon>
-        HOME
-      </button>
-    </ion-item>
-  
-  </ion-card>
+ <div class="container">
+   <div class="card-wrapper">
+     <div class="card"  *ngFor="let se of user;">
+        <img src="https://images.unsplash.com/photo-1427694012323-fb5e8b0c165b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1366&q=80" alt="card background" class="card-img">
+        <img src="{{se.Profile_pic}}" alt="profile image" class="profile-img">
+        <h1>{{se.Fullname}}</h1>
+        <p class="job-title"><strong>{{se.Cellphone}}</strong></p>
+        <p class="job-title"><strong>{{se.Bio}}</strong></p>
+        <div *ngFor="let p of profile;">
+            <p class="job-title"><strong>{{p.Room}}</strong></p>
+            <p class="job-title"><strong>R {{p.Price}}</strong></p>
+          </div>
+         <button ion-button (click)="home()">Done</button> 
+       </div>
+
+
+     </div>
+
+
+ </div>
+</ion-content>
