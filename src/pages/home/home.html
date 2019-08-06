@@ -14,14 +14,30 @@
 <ion-content >
       <ion-list >
           <ion-item *ngFor="let item of rooms">
-              <img src="{{item.Pic}}" height="300" width="350" style="border-radius: 5%">
-           <h3>{{ item.Feautures }}</h3>
-            <p> {{ item.Hotelname }}</p>
-            <p>R {{ item.Price }} p.m</p>
-
-            <button ion-button (click)="viewRoom($event, item.key)" full>VIEW</button>
+              <img src="{{item.Pic}}" height="300" width="360" style="border-radius: 2%">
+            <h1> {{ item.Hotelname }}</h1>
+           <p>{{ item.Feautures }}</p>
+            
+            <p>R {{ item.Price }} p.m</p>     <div class="icon">
+                <ion-icon class="tv"ios="ios-easel" md="md-easel"></ion-icon>
+                <ion-icon class="coffee"ios="ios-cafe" md="md-cafe"></ion-icon>
+  
+                <ion-icon class="useer"ios="ios-people" md="md-people"></ion-icon>
+            </div>
+       
+            <button ion-button (click)="viewRoom($event, item.key)" full>VIEW</button> 
           </ion-item>
       </ion-list>
 
-<button ion-button (click)="profile()">Profile</button>
+ <button ion-button (click)="profile()">Profile</button> 
+
+<ion-fab right bottom >
+    <button ion-fab mini>
+      <ion-icon name="ios-create-outline"></ion-icon>
+    </button>
+    <ion-fab-list side="top">
+      <button ion-fab (click)="profile()">  <ion-icon ios="ios-contact" md="md-contact"></ion-icon></button>
+     
+    </ion-fab-list>
+  </ion-fab>
 </ion-content>

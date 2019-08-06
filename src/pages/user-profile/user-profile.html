@@ -6,7 +6,7 @@
 -->
 <ion-header>
   <ion-navbar>
-    <ion-title>userProfile</ion-title>
+    <ion-title>Profile</ion-title>
   </ion-navbar>
 </ion-header>
 
@@ -24,3 +24,36 @@
   </div>
   <button ion-button (click)="home()">Done</button>
 </ion-content>
+<ion-card>
+
+    <img src="{{se.Profile_pic}}" height="100" width="100" style="border-radius: 50%">
+    <ion-fab right top>
+      <button ion-fab>
+        <ion-icon name="pin"></ion-icon>
+      </button>
+    </ion-fab>
+  
+    <ion-item>
+        <ion-icon ios="ios-brush" md="md-brush"></ion-icon>
+      <h2>{{se.Fullname}}</h2>
+      <p>{{se.Cellphone}}</p>
+      <p>{{se.Bio}}</p>
+    </ion-item>
+  
+    <ion-item>
+        <ion-icon ios="ios-easel" md="md-easel"></ion-icon>
+        <ion-icon ios="ios-no-smoking" md="md-no-smoking"></ion-icon>
+      <h2>Institute of Fine Cocktails</h2>
+      <p>14 S. Hop Avenue, Madison, WI 53703</p>
+    </ion-item>
+  
+    <ion-item>
+      <span item-start>18 min</span>
+      <span item-start>(2.6 mi)</span>
+      <button ion-button icon-start clear item-end>
+        <ion-icon name="navigate"></ion-icon>
+        HOME
+      </button>
+    </ion-item>
+  
+  </ion-card>

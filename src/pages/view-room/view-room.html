@@ -14,11 +14,64 @@
   <ion-list >
     <ion-item *ngFor="let item of rooms">
         <img src="{{item.Pic}}" height="300" width="350" style="border-radius: 5%">
-     <h3>{{ item.Feautures }}</h3>
-      <p> {{ item.Hotelname }}</p>
+        <h1> {{ item.Hotelname }}</h1>
+         <h3>{{ item.Feautures }}</h3>
+   
       <p>R {{ item.Price }} p.m</p>
+      <br>
+      <ion-icon class="tv" class="tv"ios="ios-easel" md="md-easel"></ion-icon>
+      <ion-icon class="coffee" ios="ios-cafe" md="md-cafe"></ion-icon>
 
+      <ion-icon class="useer" ios="ios-people" md="md-people"></ion-icon>
+<br>
       <button ion-button (click)="book(item.Price, item.Room_name)" full>BOOK</button>
+<br>
+
+      <!-- <ion-slides spaceBetween="-10">
+
+          <ion-slide>
+              <ion-card>
+                  <img src="../../assets/imgs/smile.jpg" width="40" height="40"/>
+                  <ion-card-content>
+                    <ion-card-title>
+                      Mbali Ndlovu
+                      </ion-card-title>
+                    <p>
+                      Great location!!! right on the beach.Could sit at the pool and look out at the water.
+                    </p>
+                  </ion-card-content>
+                </ion-card>
+          </ion-slide>
+        
+          <ion-slide>
+            <ion-card>
+              <img src="../../assets/imgs/nice.jpg"  width="40" height="40"/>
+              <ion-card-content>
+                <ion-card-title>
+                  Sibusiso Manana
+                  </ion-card-title>
+                <p>
+                    Such a good place to stay are the staff. All of the people are incredibly helpful and generous.
+                </p>
+              </ion-card-content>
+            </ion-card>
+          </ion-slide>
+      
+          <ion-slide>
+              <ion-card>
+                <img src="../../assets/imgs/imag1.jpg"  width="40" height="40"/>
+                <ion-card-content>
+                  <ion-card-title>
+                    Mellisa Mabaso
+                    </ion-card-title>
+                  <p>
+                  Great location right on the beach.Could sit at the pool and look out at the water.
+                  </p>
+                </ion-card-content>
+              </ion-card>
+            </ion-slide>
+        
+        </ion-slides> -->
     </ion-item>
 
 </ion-list>
