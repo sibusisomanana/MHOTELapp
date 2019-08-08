@@ -4,6 +4,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
 import * as firebase from 'firebase';
 import { snapshotToArray } from '../../app/environment';
+import { SigninPage } from '../signin/signin';
 
 /**
  * Generated class for the UserProfilePage page.
@@ -58,6 +59,23 @@ export class UserProfilePage {
   }
   home(){
     this.navCtrl.setRoot(HomePage);
+  }
+  logout(){
+    firebase.auth().signOut().then(() => {
+      console.log('logged Out');
+       this.navCtrl.setRoot(SigninPage);
+    }).catch((error) => {
+      // An error happened.
+     let errorCode = error.code;
+      let errorMessage = error.message;
+      this.alert.create({
+        title: errorCode,
+        subTitle: errorMessage,
+        buttons: ['Try again']
+      }).present()
+
+    });
+
   }
 
 }

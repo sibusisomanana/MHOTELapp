@@ -5,6 +5,7 @@ import { IonicPage, NavController, AlertController, LoadingController } from 'io
 import * as firebase from 'firebase';
 import { SigninPage } from '../signin/signin';
 import { snapshotToArray } from '../../app/environment';
+import { ProfilePage } from '../profile/profile';
 
 /**
  * Generated class for the ProfilePage page.
@@ -19,44 +20,43 @@ import { snapshotToArray } from '../../app/environment';
   templateUrl: 'home.html'
 })
 export class HomePage {
+  homeRoot = HomePage;
+accountRoot = "AccountPage";
 
   rooms;
- // userID = firebase.auth().currentUser.uid;
+  userID = firebase.auth().currentUser.uid;
   ref =  firebase.database().ref('rooms/');
+  ref2 =  firebase.database().ref();
+  user;
   constructor(public navCtrl: NavController, private alertCtrl: AlertController, public loading: LoadingController) {
   //console.log(firebase.auth().currentUser.email);
   this.ref.on('value', resp => {
     this.rooms = snapshotToArray(resp);
-    console.log(this.rooms);
+    //console.log(this.rooms);
 
     })
    this.loading.create({
       content: 'Loading..',
       duration: 3000
     }).present();
-  }
+ 
+  this.ref2.child('users').orderByChild('UID').equalTo(this.userID).on('value', resp => {
+    //console.log(resp.val());
 
+    if(resp.exists()) {
+       this.user = snapshotToArray(resp);
+       console.log(this.user);
+       
+    } else {
+      this.navCtrl.push(ProfilePage);
+    }
+   })
+  }
   viewRoom(event, key)
   {
     this.navCtrl.push(ViewRoomPage, key )
   }
-  logout(){
-    firebase.auth().signOut().then(() => {
-      console.log('logged Out');
-       this.navCtrl.setRoot(SigninPage);
-    }).catch((error) => {
-      // An error happened.
-     let errorCode = error.code;
-      let errorMessage = error.message;
-      this.alertCtrl.create({
-        title: errorCode,
-        subTitle: errorMessage,
-        buttons: ['Try again']
-      }).present()
-
-    });
-
-  }
+ 
   profile(){
     this.navCtrl.push(UserProfilePage);
   }

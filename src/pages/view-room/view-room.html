@@ -14,11 +14,14 @@
   <ion-list >
     <ion-item *ngFor="let item of rooms">
         <img src="{{item.Pic}}" height="300" width="350" style="border-radius: 5%">
-        <h1> {{ item.Hotelname }}</h1>
-         <h3>{{ item.Feautures }}</h3>
-   
-      <p>R {{ item.Price }} p.m</p>
-      <br>
+        <li>
+            <h1> {{ item.Hotelname }}</h1>
+            <p><strong>{{ item.Feautures }}</strong></p>
+      
+         <p><strong>R {{ item.Price }} p.m</strong></p>
+         <br>
+        </li>
+       
    
 
       <button ion-button (click)="book(item.Price, item.Room_name)" full>BOOK</button>
@@ -36,7 +39,7 @@
   
     <ion-item>
         <ion-icon ios="ios-contract" md="md-contract"></ion-icon>
-      <h2>25-30 square meter long</h2>
+      <h2>5-12 square meter long</h2>
       <p>Orlando-Soweto, Mbele street</p>
     </ion-item>
   
