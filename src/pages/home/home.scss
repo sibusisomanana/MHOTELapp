@@ -1,17 +1,29 @@
 page-home {
     @import url('https://fonts.googleapis.com/css?family=Righteous|Titillium+Web&display=swap');
-    .container{
 
-        display: flex;
-        flex-direction: column;
-        font-family: 'Titillium Web', sans-serif;
-        background: linear-gradient(rgba(0, 29, 82, 0.603),rgba(24, 23, 21, 0.781));
-        background-repeat: no-repeat;
-        background-size: cover;
-        height: 100%;
-        width: 100%;
-    }
-    
+  .parent{
+
+    padding: 8px;
+    width: 100%;
+  }
+  .child{
+     
+      padding: 1px;
+      color:  #004280;
+  }
+  .box{
+      background-color:#004280;
+      padding: 10px;
+    ;
+      text-align: center;
+      position: absolute;
+        top: 0px;
+        right: 0px;
+        border-radius: 50px;
+  }
+  .ion-fab{
+    float: right;
+  }
     
  
   
@@ -24,7 +36,8 @@ page-home {
         color:rgb(255, 254, 254);
     }
     h1{
-        color:white;
+        color: #004280;
+        font-family: 'Titillium Web', sans-serif;
     }
     .coffee{
         color : rgb(82, 82, 82);
@@ -37,6 +50,25 @@ page-home {
     }
     .useer{
         color : rgb(82, 82, 82);
+    }
+
+   
+    .box2{
+        background-color:rgb(255, 253, 253);
+        height: 400px;
+        .box1{
+            background-color: #e68f17;
+            padding: 30px;
+            width: 170px;
+            z-index: 3;
+            position: relative;
+            bottom: 90px;
+            color:white;
+            border-radius: 5px;
+            font-family: 'Titillium Web', sans-serif;
+            
+        }
+     
     }
     
     

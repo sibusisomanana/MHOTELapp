@@ -8,6 +8,7 @@ import { SigninPage } from '../pages/signin/signin';
 import * as firebase from 'firebase';
 import { firebaseConfig } from './environment';
 import { t } from '@angular/core/src/render3';
+import { BoardPage } from '../pages/board/board';
 
 @Component({
   templateUrl: 'app.html'

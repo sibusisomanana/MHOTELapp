@@ -1,12 +1,12 @@
 page-signup {
-    
+     
     @import url('https://fonts.googleapis.com/css?family=Righteous|Titillium+Web&display=swap');
     .container{
 
         display: flex;
         flex-direction: column;
         font-family: 'Titillium Web', sans-serif;
-        background: linear-gradient(rgba(0, 29, 82, 0.603),rgba(24, 23, 21, 0.781));
+        background: linear-gradient(rgba(243, 176, 33, 0.603),rgba(44, 110, 148, 0.781)),url("https://images.unsplash.com/photo-1516298957360-a34f6af2d853?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80");
         background-repeat: no-repeat;
         background-size: cover;
         height: 100%;
@@ -26,8 +26,8 @@ page-signup {
         margin-left: 20px;
         margin-right: 20px;
         position: relative;
-        bottom: 100px;
-        border-radius: 20px;
+        bottom: 50px;
+      
         text-align: center;
 
    

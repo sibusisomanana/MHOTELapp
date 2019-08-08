@@ -15,8 +15,7 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { SignupPage } from '../pages/signup/signup';
 import { SigninPage } from '../pages/signin/signin';
-
-
+import { BoardPage } from '../pages/board/board';
 @NgModule({
   declarations: [
     MyApp,
@@ -28,7 +27,11 @@ import { SigninPage } from '../pages/signin/signin';
     BookPage,
     PaymentPage,
     LastPage,
-    UserProfilePage
+    UserProfilePage,
+    BoardPage
+
+
+
   ],
   imports: [
     BrowserModule,
@@ -45,7 +48,8 @@ import { SigninPage } from '../pages/signin/signin';
     BookPage,
     PaymentPage,
     LastPage,
-    UserProfilePage
+    UserProfilePage,
+    BoardPage
   ],
   providers: [
     StatusBar,
