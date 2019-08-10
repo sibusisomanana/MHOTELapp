@@ -6,7 +6,7 @@
 -->
 <ion-header>
   <ion-navbar>
-    <ion-title>Your Room</ion-title>
+    <ion-title>Room</ion-title>
   </ion-navbar>
 </ion-header>
 
@@ -16,13 +16,13 @@
         <img src="{{item.Pic}}" height="300" width="350" style="border-radius: 5%">
         <li>
             <h1> {{ item.Hotelname }}</h1>
-            <p><strong>{{ item.Feautures }}</strong></p>
-      
+
+
          <p><strong>R {{ item.Price }} p.m</strong></p>
          <br>
         </li>
-       
-   
+
+
 
       <button ion-button (click)="book(item.Price, item.Room_name)" full>BOOK</button>
 
@@ -31,26 +31,26 @@
 </ion-list>
 <ion-card>
 
-    <ion-item>
-        <ion-icon class="useer" ios="ios-people" md="md-people"></ion-icon>
-      <h2>Maximum of 4 persons</h2>
-      <p>Pimville-Soweto , Nkosi Street</p>
+    <ion-item *ngFor="let item of rooms">
+      <ion-icon ios="ios-checkmark-circle-outline" md="md-checkmark-circle-outline"></ion-icon>
+      <h2>Features</h2>
+      <p><strong>{{ item.Feautures }}</strong></p>
     </ion-item>
-  
-    <ion-item>
-        <ion-icon ios="ios-contract" md="md-contract"></ion-icon>
-      <h2>5-12 square meter long</h2>
-      <p>Orlando-Soweto, Mbele street</p>
+
+    <ion-item *ngFor="let item of rooms">
+      <ion-icon ios="ios-locate" md="md-locate"></ion-icon>
+      <h2>Located</h2>
+      <p>{{ item.Location }}</p>
     </ion-item>
-  
+
     <ion-item>
- 
-   
+
+
       <!-- <button ion-button icon-start clear item-end>
         <ion-icon name="navigate"></ion-icon>
-        
+
       </button> -->
     </ion-item>
-  
+
   </ion-card>
 </ion-content>

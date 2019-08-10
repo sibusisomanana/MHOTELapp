@@ -1,5 +1,5 @@
-<!-- 
-  <button ion-button (click)="home()">Done</button> --> 
+<!--
+  <button ion-button (click)="home()">Done</button> -->
 
   <ion-navbar >
       <button  ion-button clear style="float: right;" (click)="logout()"> <ion-icon ios="ios-power" md="md-power"></ion-icon></button>
@@ -13,35 +13,27 @@
         <img src="{{se.Profile_pic}}" alt="profile image" class="profile-img">
         <h1>{{se.Fullname}}</h1>
 
-       
-        <div padding >
-            <ion-segment [(ngModel)]="pet">
-              <ion-segment-button value="bookings">
-                Bookings
-              </ion-segment-button>
-        <!--  -->
-     
-            </ion-segment>
 
-            
-          <ion-list *ngFor="let b of profile">
-      
-               <p> {{b.Holder}}</p>
-             
-              <p> {{b.Price}}</p>
-                
-             <p>{{b.Room}}</p>  
-      </ion-list> 
+        <div padding >
+
+             <ion-list *ngFor="let b of profile">
+
+               <ion-item> {{b.Holder}}</ion-item>
+
+              <ion-item> {{b.Price}}</ion-item>
+
+             <ion-item>{{b.Room}}</ion-item>
+            </ion-list>
           </div>
-          
-        
-         
+
+
+
        </div>
 
-       
+
      </div>
-    
+
 
     </div>
-  
+
 
