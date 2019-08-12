@@ -26,12 +26,14 @@ export class LastPage {
   e = arr;
   r_name;
   price;
+  person;
   // userID = firebase.auth().currentUser.uid;
    ref =  firebase.database().ref('bookings/');
-   constructor(public navCtrl: NavController) {
+   constructor(public navCtrl: NavController,public navParams: NavParams) {
    //console.log(firebase.auth().currentUser.email);
     this.r_name = this.d[0].room;
     this.price = this.e[0].price;
+    this.person = this.navParams.data;
    }
 
   ionViewDidLoad() {

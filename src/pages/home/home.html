@@ -1,11 +1,16 @@
- 
-
+<div id="custom-overlay" [style.display]="splash ? 'flex': 'none'">
+  <div class="flb">
+    <div class="Aligner-item Aligner-item--top"></div>
+    <img src="assets/imgs/logo1.png">
+    <div class="Aligner-item Aligner-item--bottom"></div>
+  </div>
+</div>
 
 <ion-content >
 <div class="parent">
   <div class="child" >
     <h1>Home</h1>
-    <div class="box" *ngFor="let us of user">   
+    <div class="box" *ngFor="let us of user">
                 <button ion-fab (click)="profile()"> <img src="{{us.Profile_pic}}" style="border-radius: 30%"></button>
     </div>
   </div>
@@ -13,37 +18,37 @@
 
       <ion-list >
 
-        
+
           <ion-item *ngFor="let item of rooms">
-              
+
 
               <div class="box2">
                   <img src="{{item.Pic}}" height="300" width="380" style="border-radius: 1%">
-           
+
                 <div class="box1">
                     <h3><strong>{{ item.Room_name }}</strong></h3>
-            
-                    <h3><strong>R {{ item.Price }} p.m</strong></h3> 
+
+                    <h3><strong>R {{ item.Price }} p.m</strong></h3>
                    <button ion-button (click)="viewRoom($event, item.key)" full> VIEW</button>
                 </div>
-               
+
                 </div>
-             
+
             <!-- <h1> {{ item.Hotelname }}</h1> -->
-           
-       
+
+
             <!-- <button ion-button (click)="viewRoom($event, item.key)" full>VIEW</button>  -->
           </ion-item>
       </ion-list>
 
-<!-- 
+<!--
 <ion-fab right bottom >
     <button ion-fab mini>
         <button ion-fab (click)="profile()">  <ion-icon ios="ios-contact" md="md-contact"></ion-icon></button>
     </button>
   </ion-fab> -->
 
-  
+
  <!-- <div class="container">
 
     <div class="card-wrapper">
@@ -54,7 +59,7 @@
          <p class="job-title"><strong>{{se.Cellphone}}</strong></p>
          <p class="job-title"><strong>{{se.Bio}}</strong></p>
       </div>
-      <button ion-button (click)="home()" full>Done</button> 
+      <button ion-button (click)="home()" full>Done</button>
     </div>
   </div> -->
 </ion-content>

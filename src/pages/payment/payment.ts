@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams, LoadingController } from 'ionic-an
 import arr from '../book/book';
 import * as firebase from 'firebase';
 import { LastPage } from '../last/last';
+import { snapshotToArray } from '../../app/environment';
 
 /**
  * Generated class for the PaymentPage page.
@@ -26,10 +27,28 @@ export class PaymentPage {
   cvv;
   userID = firebase.auth().currentUser.uid ;
   ref = firebase.database().ref('bookings/');
+  ref2 = firebase.database().ref();
+  fullname;
+  cellphone;
+  pic;
+  in;
+  out;
+  date;
   constructor(public navCtrl: NavController, public navParams: NavParams,  public loading: LoadingController) {
     console.log(this.d);
     this.room = this.d[0].room;
     this.price = this.d[0].price;
+    this.in = this.d[0].in;
+    this.out = this.d[0].out;
+    this.date = Date();
+
+    this.ref2.child('users').orderByChild('UID').equalTo(this.userID).on('value', resp=>{
+      if(resp.exists()){
+        this.fullname = snapshotToArray(resp)[0].Fullname;
+        this.cellphone =snapshotToArray(resp)[0].Cellphone;
+        this.pic = snapshotToArray(resp)[0].Profile_pic;
+      }
+    })
   }
 
   ionViewDidLoad() {
@@ -52,7 +71,13 @@ export class PaymentPage {
       Price: this.price,
       Card_number : this.cardno,
       CVV : this.cvv,
-      UID : firebase.auth().currentUser.uid
+      Fullname : this.fullname,
+      Cellphone : this.cellphone,
+      Pic : this.pic,
+      UID : firebase.auth().currentUser.uid,
+      Check_in : this.in,
+      Check_out : this.out,
+      Created_date: this.date
     });
      this.price = '';
      this.room = '';
@@ -60,7 +85,7 @@ export class PaymentPage {
      this.cardno = '';
      this.cvv = '';
    // alert.present();
-    this.navCtrl.push(LastPage);
+    this.navCtrl.push(LastPage, this.fullname);
   }
 
 }
