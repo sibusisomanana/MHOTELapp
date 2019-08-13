@@ -20,10 +20,10 @@
 
 
     <div class="One2">
-      <p>{{item.Price}}</p> 
-      <p>{{item.Location}}</p> 
+      <p>R{{item.Price}}</p> 
+      <p>{{item.Location}}</p>     <button ion-button round (click)="viewRoom($event, item.key)" > VIEW</button> 
 
-      <button ion-button round (click)="viewRoom($event, item.key)" > VIEW</button> 
+  
       </div>
   <div class="One1">
       <img src="{{item.Pic}}" >

@@ -19,8 +19,7 @@ justify-content: center;
       width: 100%;
 
       height: 200px;
-  
-    padding: 8px;
+
     width: 100%;
   }
   .child{
@@ -62,25 +61,26 @@ justify-content: center;
 
     .One1{
       height: 180px;
-      width: 50%;
+      width: 100%;
       border-radius: 20px;
-      background-color: rgb(87, 78, 78);
+      background-color: rgb(114, 114, 114);
     }
     .One1 > img{
-      width: 120%;
+      width: 100%;
       height: 100%;
       border-radius: 20%;
     }
     
     .One2{
       height: 130px;
-      width: 40%;
-      border-radius: 10px;
-      background-color: rgb(67, 182, 235);
+      width: 70%;
+      border-radius: 20%;
+      background-color: rgb(171, 176, 179);
       color: white;
       position: relative;
-      left: 20px;
+      left: 2px;
       margin-top: 25px;
+      padding: 20px;
     }
 
 
@@ -93,7 +93,7 @@ top: 50px;
 left: 50px;
 bottom: 50px;
 right: 50px;
-border-radius: 30px;
+border-radius: 20px;
 
 
     //     background-color:rgb(19, 10, 10);
@@ -128,7 +128,7 @@ border-radius: 30px;
 }
 
 .flb {
-  background-color: #3ebffb;
+  background-color: #bfe0f0;
   height:100%;
   width:100%;
   animation: pulse 1s linear forwards;
