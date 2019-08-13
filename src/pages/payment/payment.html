@@ -11,7 +11,7 @@
 </ion-header>
 
 <ion-content padding>
-<ion-item>
+<!-- <ion-item>
   <ion-label fixed>Card holder</ion-label>
   <ion-input type="text" [(ngModel)]="holder" value=""></ion-input>
 </ion-item>
@@ -25,5 +25,48 @@
 </ion-item>
 
 <button ion-button (click)="submit()" full>Submit</button>
-<button ion-button color="primary" (click)="submit()" full>Cancel</button>
+-->
+
+
+<div class="container">
+    <div class="logo">
+      </div>
+      <div class="login">
+       <div class="method">
+          <h5>How would you like to pay?</h5>
+          <!-- <div class="method1">
+              <img src="../../assets/imgs/masterCard.png" alt="" class="fnb">
+              <img src="../../assets/imgs/Express.png" alt="" class="fnb">
+              <img src="../../assets/imgs/visa.png" alt="" class="fnb">
+          </div> -->
+       </div>
+            <div class="data">
+                
+                <ion-item>
+                    <ion-label stacked>Cardholder Name</ion-label>
+                    <input type="text" class="input" [(ngModel)]="name">
+                  </ion-item>
+                <br>
+                  <ion-item>
+                    <ion-label stacked>Card Number</ion-label>
+                    <input type="text" class="input" [(ngModel)]="card">
+                  </ion-item>
+                  <ion-item>
+                      <ion-label stacked>Expiration Date</ion-label>
+                      <input type="text" class="input" [(ngModel)]="date">
+                    </ion-item>
+                  <br>
+                    <ion-item>
+                      <ion-label stacked>CCV Number</ion-label>
+                      <input type="text" class="input" [(ngModel)]="ccv">
+                    </ion-item>
+  
+
+
+            </div>
+      <div class="button">
+          <button class="loginButton" (click)="submit()">Submit</button><br>
+      </div>
+        </div>
+</div>
 </ion-content>
