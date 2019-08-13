@@ -11,8 +11,8 @@ page-view-room {
     //     height: 100%;
     //     width: 100%;
     // }
-    
-  
+
+
      .item{
        text-align: left;
 
@@ -34,10 +34,10 @@ page-view-room {
       }
 
     //   .container{
-        
+
     //     width: 100%;
     //     height: 100%;
-      
+
     // }
 
 
@@ -61,31 +61,36 @@ justify-content: center;
     //   height: 100%;
     //   border-radius: 20%;
     // }
-    
+
     .One2{
       height: 130px;
       width: 40%;
-    
+
       background-color: white;
       position: relative;
       left: 20px;
       margin-top: 25px;
     }
-
+.flex3{
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
     .flex-container {
       display: flex;
       justify-content: center;
       font-family: 'Bree Serif', serif;
-  
+      height: 20%;
+
     }
-    
+
     .flex-container > div {
       background-color: #f1f1f1;
-      
+      height: 70%;
       width: 100px;
       margin: 5px;
       text-align: center;
-      line-height: 50px;
+      line-height: 15px;
       font-size: 25px;
     }
 
@@ -94,7 +99,7 @@ justify-content: center;
       justify-content: center;
       font-family: 'Bree Serif', serif;
     }
-    
+
     .flex> div {
 
 

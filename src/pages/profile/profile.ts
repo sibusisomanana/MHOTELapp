@@ -1,3 +1,4 @@
+import { UpdateProfilePage } from './../update-profile/update-profile';
 import { user } from './model/user';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, LoadingController, AlertController } from 'ionic-angular';
@@ -6,6 +7,7 @@ import { Camera, CameraOptions } from '@ionic-native/camera';
 import { SigninPage } from '../signin/signin';
 import { HomePage } from '../home/home';
 import { snapshotToArray } from '../../app/environment';
+import { ModalController } from 'ionic-angular';
 
 /**
  * Generated class for the ProfilePage page.
@@ -28,7 +30,7 @@ export class ProfilePage {
   prof;
   storageRef = firebase.storage().ref();
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private camera: Camera, public loading: LoadingController, public alertCtrl: AlertController) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private camera: Camera, public loading: LoadingController, public alertCtrl: AlertController, public modalCtrl: ModalController) {
     this.userID = this.navParams.data;
     this.ref =  firebase.database().ref('users/');
     this.ref.on('value', resp => {
@@ -87,7 +89,7 @@ export class ProfilePage {
       buttons: ['Ok']
     })
 
-    if(this.myphoto != '') {
+    if(this.myphoto != ''|| this.user.cellno.toString().length == 10) {
       let newUser = this.ref.push();
     newUser.set({
       Fullname: user.fullname,
@@ -102,14 +104,36 @@ export class ProfilePage {
      this.user.bio = '';
     alert.present();
     this.navCtrl.setRoot(HomePage);
-    }else {
-     let alert = this.alertCtrl.create({
-       title: 'Warning!',
-       subTitle: 'You must upload image first',
-       buttons: ['Ok']
-     })
-     alert.present();
+    } else {
+      this.alertCtrl.create({
+        title: 'Warning!',
+        subTitle: 'Invalid inputs',
+        buttons:['Ok']
+      }).present();
      this.navCtrl.setRoot(ProfilePage);
     }
   }
-}
+  writeNewPost(uid, username, picture, title, body) {
+    // A post entry.
+    let postData = {
+      author: username,
+      uid: uid,
+      body: body,
+      title: title,
+      starCount: 0,
+      authorPic: picture
+    };
+
+    // Get a key for a new Post.
+    let newPostKey = firebase.database().ref().child('posts').push().key;
+
+    // Write the new post's data simultaneously in the posts list and the user's post list.
+    var updates = {};
+    updates['/posts/' + newPostKey] = postData;
+    updates['/user-posts/' + uid + '/' + newPostKey] = postData;
+
+    return firebase.database().ref().update(updates);
+  }
+
+  }
+

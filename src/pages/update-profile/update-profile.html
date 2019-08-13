@@ -1,0 +1,23 @@
+<!--
+  Generated template for the UpdateProfilePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<div class="container">
+  <div class="card-wrapper">
+    <div class="card"  *ngFor="let se of user;">
+       <img src="https://images.unsplash.com/photo-1515824955341-43172b4d8260?ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80" alt="card background" class="card-img">
+      <button ion-button clear (click)="takePhoto(0)">Profile picture<ion-icon name="attach"></ion-icon></button>
+      <img [src]="myphoto" alt="my uploadings" *ngIf="myphoto" width="100" height="100">
+     <ion-input type="text" [(ngModel)]="se.Fullname" placeholder="Full name"></ion-input>
+     <ion-input type="tel" [(ngModel)]="se.Cellphone" placeholder="Cellphone number"></ion-input>
+     <ion-input type="text" [(ngModel)]="se.Bio" placeholder="Bio"></ion-input>
+     <button ion-button (click)="createProfile(se)">Update profile</button>
+      </div>
+
+
+    </div>
+
+
+   </div>
