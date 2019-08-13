@@ -17,7 +17,7 @@ import arry from '../view-room/view-room';
 })
 export class BookPage {
 
-  date_in;
+  date_in ;
   date_out;
   people: number;
   rooms: number;
@@ -40,21 +40,25 @@ export class BookPage {
    // console.log('ionViewDidLoad BookPage');
 
 
+
   }
+dateV(){
 
-
-  gotoPay(){
-
-    var datein = new Date(this.date_in).getDate();
-    var dateout = new Date(this.date_out).getDate();
-    this.ouput = this.price * this.people * this.rooms * Number(dateout - datein);
-    console.log(this.ouput);
-
-
+  let date = new Date(this.date_in).valueOf();
+  let dt = new Date(this.date_out).valueOf();
+  this.ouput =  this.people * this.rooms * Number(dt - date);
+  let today = new Date().valueOf();
+  if(today > date || dt < date){
+    this.alert.create({
+      title:'Date in error!',
+      message:'Please select future!'
+    }).present();
+  } else {
     let obj1 ={
       room: this.d[0].room ,
-      price: this.ouput
-
+      price: this.ouput,
+      in: this.date_in,
+      out: this.date_out
     }
 
     arr.push(obj1);
@@ -62,6 +66,7 @@ export class BookPage {
 
     this.navCtrl.push(PaymentPage);
   }
+}
   plusAdult(){
     this.adult = this.adult + 1;
   }
@@ -75,8 +80,14 @@ export class BookPage {
   plusChild(){
     this.child = this.child + 1;
 }
+}
 
-  }
+
+
+
+
+
+
 
 
 var arr = new Array()

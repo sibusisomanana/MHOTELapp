@@ -94,7 +94,8 @@ export class ProfilePage {
       Cellphone: user.cellno,
       Bio: user.bio,
       UID: firebase.auth().currentUser.uid,
-      Profile_pic: this.myphoto
+      Profile_pic: this.myphoto,
+      Created_date: Date()
     });
      this.user.fullname = null;
      this.user.cellno = '';

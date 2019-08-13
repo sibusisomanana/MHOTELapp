@@ -21,11 +21,16 @@ export class SigninPage {
 
   email;
   password;
+  splash = true;
   constructor(public navCtrl: NavController, public navParams: NavParams, public loading: LoadingController, public alertCtrl: AlertController) {
   }
 
   ionViewDidLoad() {
-   // console.log('ionViewDidLoad SigninPage');
+
+    setTimeout(() =>{
+      this.splash = false;
+
+    }, 4000);
   }
   Login(){
     let loaders = this.loading.create({

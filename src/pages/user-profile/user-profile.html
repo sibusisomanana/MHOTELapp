@@ -18,9 +18,10 @@
 
              <ion-list *ngFor="let b of profile">
 
-               <ion-item> {{b.Holder}}</ion-item>
+               <ion-item> {{b.Fullname}}</ion-item>
 
-              <ion-item> {{b.Price}}</ion-item>
+
+              <ion-item>Booked on {{b.Created_date}} from {{b.Check_in}} to {{b.Check_out}}</ion-item>
 
              <ion-item>{{b.Room}}</ion-item>
             </ion-list>

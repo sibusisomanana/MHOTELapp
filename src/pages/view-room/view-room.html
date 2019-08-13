@@ -8,6 +8,40 @@
 
 </ion-header>
 <ion-content >
+  <ion-list >
+    <ion-item *ngFor="let item of rooms">
+        <img src="{{item.Pic}}" height="300" width="350" style="border-radius: 5%">
+        <li>
+            <h1> {{ item.Hotelname }}</h1>
+
+
+         <p><strong>R {{ item.Price }} p.m</strong></p>
+         <br>
+        </li>
+
+
+
+      <button ion-button (click)="book(item.Pic,item.Price, item.Room_name)" full>BOOK</button>
+
+    </ion-item>
+
+</ion-list>
+<ion-card>
+
+    <ion-item *ngFor="let item of rooms">
+      <ion-icon ios="ios-checkmark-circle-outline" md="md-checkmark-circle-outline"></ion-icon>
+      <h2>Features</h2>
+      <p><strong>{{ item.Feautures }}</strong></p>
+    </ion-item>
+
+    <ion-item *ngFor="let item of rooms">
+      <ion-icon ios="ios-locate" md="md-locate"></ion-icon>
+      <h2>Located</h2>
+      <p>{{ item.Location }}</p>
+    </ion-item>
+
+    <ion-item>
+
 
     <div class="container">
     

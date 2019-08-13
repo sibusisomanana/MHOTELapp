@@ -28,8 +28,10 @@ accountRoot = "AccountPage";
   ref =  firebase.database().ref('rooms/');
   ref2 =  firebase.database().ref();
   user;
+  splash = true;
   constructor(public navCtrl: NavController, private alertCtrl: AlertController, public loading: LoadingController) {
   //console.log(firebase.auth().currentUser.email);
+
   this.ref.on('value', resp => {
     this.rooms = snapshotToArray(resp);
     //console.log(this.rooms);
@@ -39,24 +41,31 @@ accountRoot = "AccountPage";
       content: 'Loading..',
       duration: 3000
     }).present();
- 
+
   this.ref2.child('users').orderByChild('UID').equalTo(this.userID).on('value', resp => {
     //console.log(resp.val());
 
     if(resp.exists()) {
        this.user = snapshotToArray(resp);
        console.log(this.user);
-       
+
     } else {
       this.navCtrl.push(ProfilePage);
     }
    })
   }
+  ionViewDidLoad() {
+
+    setTimeout(() =>{
+      this.splash = false;
+
+    }, 4000);
+  }
   viewRoom(event, key)
   {
     this.navCtrl.push(ViewRoomPage, key )
   }
- 
+
   profile(){
     this.navCtrl.push(UserProfilePage);
   }
