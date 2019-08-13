@@ -19,7 +19,7 @@ justify-content: center;
       width: 100%;
 
       height: 200px;
-      background-color: rgb(196, 180, 180);
+  
     padding: 8px;
     width: 100%;
   }
@@ -31,7 +31,7 @@ justify-content: center;
   .box{
       background-color:#004280;
       padding: 10px;
-    ;
+    
       text-align: center;
       position: absolute;
         top: 0px;
@@ -67,7 +67,7 @@ justify-content: center;
       background-color: rgb(87, 78, 78);
     }
     .One1 > img{
-      width: 100%;
+      width: 120%;
       height: 100%;
       border-radius: 20%;
     }
@@ -76,20 +76,13 @@ justify-content: center;
       height: 130px;
       width: 40%;
       border-radius: 10px;
-      background-color: white;
+      background-color: rgb(67, 182, 235);
+      color: white;
       position: relative;
       left: 20px;
       margin-top: 25px;
     }
-  .parent{
-background-color: red;
-width: 60%;
-  float: right;
-    border-radius: 30px;
 
-    height: 100%;
-
-  }
 
    
     .small{
