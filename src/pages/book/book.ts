@@ -45,11 +45,16 @@ export class BookPage {
   }
 dateV(){
 
-  let date = new Date(this.date_in).valueOf();
-  let dt = new Date(this.date_out).valueOf();
-  this.ouput =  this.people * this.rooms * Number(dt - date);
-  let today = new Date().valueOf();
-  if(today > date || dt < date){
+   let date = new Date(this.date_in).getDate();
+   let dt = new Date(this.date_out).getDate();
+
+console.log(Number(dt - date));
+let checkin = new Date(this.date_in).valueOf();
+let checkout = new Date(this.date_out).valueOf();
+
+   this.ouput =  (this.adult * this.price) + (this.child * this.price/2) + this.rooms * Number(dt - date);
+   let today = new Date().valueOf();
+  if(today > checkin || checkout < checkin){
     this.alert.create({
       title:'Date in error!',
       message:'Please select future!'
@@ -68,7 +73,7 @@ dateV(){
     this.navCtrl.push(PaymentPage);
   }
 }
- 
+
 }
 
 

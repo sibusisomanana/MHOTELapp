@@ -6,10 +6,10 @@ page-home {
 // }
 
     .container{
-        
+
         width: 100%;
         height: 100%;
-      
+
     }
 
 
@@ -19,8 +19,8 @@ justify-content: center;
       width: 100%;
 
       height: 200px;
-  
-    padding: 8px;
+
+    padding-right: 3%;
     width: 100%;
   }
   .child{
@@ -30,8 +30,8 @@ justify-content: center;
   }
   .box{
       background-color:#004280;
-      padding: 10px;
-    
+     // padding: 10px;
+
       text-align: center;
       position: absolute;
         top: 0px;
@@ -64,27 +64,28 @@ justify-content: center;
       height: 180px;
       width: 50%;
       border-radius: 20px;
-      background-color: rgb(87, 78, 78);
+      
     }
     .One1 > img{
-      width: 120%;
+      width: 100%;
       height: 100%;
       border-radius: 20%;
     }
-    
+
     .One2{
       height: 130px;
-      width: 40%;
+      width: 50%;
       border-radius: 10px;
       background-color: rgb(67, 182, 235);
       color: white;
       position: relative;
-      left: 20px;
+      left: 10px;
       margin-top: 25px;
+      padding-left: 2%;
     }
 
 
-   
+
     .small{
  background-color: yellow;
 position: absolute;
@@ -99,19 +100,19 @@ border-radius: 30px;
     //     background-color:rgb(19, 10, 10);
     //     height: 130px;
     //     border-radius: 30px;
-       
+
     //    padding: 30px;
     //      width: 170px;
-   
+
     //     position: relative;
         // bottom: 220px;
 
 
-  
+
     }
 
-    
-    
+
+
 
 
 

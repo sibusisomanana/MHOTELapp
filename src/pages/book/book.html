@@ -39,11 +39,11 @@
         <div class="flex">
           <ion-item>
             <ion-label float>Check in</ion-label>
-            <ion-datetime displayFormat="YYYY-MM-DD" max="2050-10-31" [(ngModel)]="date_in"></ion-datetime>
+            <ion-datetime displayFormat="YYYY-MM-DD" min="2019-08-14" max="2050-10-31" [(ngModel)]="date_in"></ion-datetime>
           </ion-item>
           <ion-item>
             <ion-label float>Check out</ion-label>
-            <ion-datetime displayFormat="YYYY-MM-DD" max="2050-10-31" [(ngModel)]="date_out"></ion-datetime>
+            <ion-datetime displayFormat="YYYY-MM-DD" min="2019-08-14" max="2050-10-31" [(ngModel)]="date_out"></ion-datetime>
           </ion-item>
 
 

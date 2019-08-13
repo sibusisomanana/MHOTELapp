@@ -34,6 +34,7 @@ export class PaymentPage {
   in;
   out;
   date;
+  exp_date;
   constructor(public navCtrl: NavController, public navParams: NavParams,  public loading: LoadingController) {
     console.log(this.d);
     this.room = this.d[0].room;
@@ -77,13 +78,15 @@ export class PaymentPage {
       UID : firebase.auth().currentUser.uid,
       Check_in : this.in,
       Check_out : this.out,
-      Created_date: this.date
+      Created_date: this.date,
+      Expiry_date: this.exp_date
     });
      this.price = '';
      this.room = '';
      this.price = '';
      this.cardno = '';
      this.cvv = '';
+     this.exp_date = '';
    // alert.present();
     this.navCtrl.push(LastPage, this.fullname);
   }

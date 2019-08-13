@@ -30,9 +30,9 @@ page-payment {
         margin-top: 10px;
     }
     .input{
-        border: 2px solid gray;
+      //  border: 2px solid gray;
         border-radius: 5px;
-        box-shadow: 2px 2px  gray ;
+      //  box-shadow: 2px 2px  gray ;
     }
     .fnb{
         height: 40px;
@@ -64,6 +64,9 @@ page-payment {
       color: white;
       border-radius: 60px;
       font-size: 20px;
+  }
+  h3{
+    text-align: center;
   }
 
 }
