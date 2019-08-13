@@ -25,11 +25,16 @@ export class BookPage {
   d = arry ;
   room ;
   price ;
-  constructor(public navCtrl: NavController, public navParams: NavParams, private alertCtrl: AlertController) {
+  pic;
+  adult=0;
+  child=0;
+  constructor(public navCtrl: NavController, public navParams: NavParams, private alert: AlertController) {
     this.price = this.d[0].price;
-    //this.room = this.d[0].room;
-
+    this.pic = this.d[0].pic;
+    console.log(this.child.toString().length);
+    
   }
+  
 
   ionViewDidLoad() {
    // console.log('ionViewDidLoad BookPage');
@@ -44,7 +49,7 @@ dateV(){
   this.ouput =  this.people * this.rooms * Number(dt - date);
   let today = new Date().valueOf();
   if(today > date || dt < date){
-    this.alertCtrl.create({
+    this.alert.create({
       title:'Date in error!',
       message:'Please select future!'
     }).present();
@@ -62,7 +67,21 @@ dateV(){
     this.navCtrl.push(PaymentPage);
   }
 }
+  plusAdult(){
+    this.adult = this.adult + 1;
+  }
+  lessAdult(){
+       this.adult = this.adult - 1;
+  }
+  lessChild(){
+      this.child = this.child - 1;    
+  }
+
+  plusChild(){
+    this.child = this.child + 1;
 }
+}
+
 
 
 

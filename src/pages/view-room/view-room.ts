@@ -38,7 +38,8 @@ export class ViewRoomPage {
     let obj ={
       pic: pic,
       room:room ,
-      price:price
+      price:price,
+     
 
     }
 

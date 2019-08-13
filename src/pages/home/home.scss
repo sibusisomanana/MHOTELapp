@@ -1,8 +1,25 @@
 page-home {
     @import url('https://fonts.googleapis.com/css?family=Righteous|Titillium+Web&display=swap');
+// .header{
+//   background-color: red;
+//   height: 10%;
+// }
 
-  .parent{
+    .container{
+        
+        width: 100%;
+        height: 100%;
+      
+    }
 
+
+    .One{
+      display: flex;
+justify-content: center;
+      width: 100%;
+
+      height: 200px;
+      background-color: rgb(196, 180, 180);
     padding: 8px;
     width: 100%;
   }
@@ -42,34 +59,66 @@ page-home {
     .coffee{
         color : rgb(82, 82, 82);
     }
-    .icon{
-        float: left;
+
+    .One1{
+      height: 180px;
+      width: 50%;
+      border-radius: 20px;
+      background-color: rgb(87, 78, 78);
     }
-    .tv{
-        color : rgb(82, 82, 82);
+    .One1 > img{
+      width: 100%;
+      height: 100%;
+      border-radius: 20%;
     }
-    .useer{
-        color : rgb(82, 82, 82);
+    
+    .One2{
+      height: 130px;
+      width: 40%;
+      border-radius: 10px;
+      background-color: white;
+      position: relative;
+      left: 20px;
+      margin-top: 25px;
     }
+  .parent{
+background-color: red;
+width: 60%;
+  float: right;
+    border-radius: 30px;
+
+    height: 100%;
+
+  }
+
+   
+    .small{
+ background-color: yellow;
+position: absolute;
+height: 60%  ;
+top: 50px;
+left: 50px;
+bottom: 50px;
+right: 50px;
+border-radius: 30px;
 
 
-    .box2{
-        background-color:rgb(255, 253, 253);
-        height: 400px;
-        .box1{
-            background-color: #e68f17;
-            padding: 30px;
-            width: 170px;
-            z-index: 3;
-            position: relative;
-            bottom: 90px;
-            color:white;
-            border-radius: 5px;
-            font-family: 'Titillium Web', sans-serif;
+    //     background-color:rgb(19, 10, 10);
+    //     height: 130px;
+    //     border-radius: 30px;
+       
+    //    padding: 30px;
+    //      width: 170px;
+   
+    //     position: relative;
+        // bottom: 220px;
 
-        }
 
+  
     }
+
+    
+    
 
 
 

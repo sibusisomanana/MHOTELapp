@@ -1,9 +1,115 @@
 page-book {
-    @import url('https://fonts.googleapis.com/css?family=Righteous|Titillium+Web&display=swap');
-    .container{
+   
 
+    @import url('https://fonts.googleapis.com/css?family=Bree+Serif&display=swap');
+      // .container{
+  
+      //     display: flex;
+      //     flex-direction: column;
+      //     font-family: 'Titillium Web', sans-serif;
+      //     background: linear-gradient(rgba(0, 29, 82, 0.603),rgba(41, 31, 13, 0.781));
+      //     background-repeat: no-repeat;
+      //     background-size: cover;
+      //     height: 100%;
+      //     width: 100%;
+      // }
+      
+    
+       .item{
+         text-align: left;
+  
+       }
+        .tv{
+            color: #009ac9;
+        }
+        .coffee{
+          color: #009ac9;
+        }
+        .useer{
+          color: #009ac9;
+        }
+        h2{
+          font-family: 'Bree Serif', serif;
+        }
+        p{
+          font-family: 'Bree Serif', serif;
+        }
+  
+      //   .container{
+          
+      //     width: 100%;
+      //     height: 100%;
+        
+      // }
+  
+  
+      .One{
         display: flex;
-        flex-direction: column;
-        font-family: 'Titillium Web', sans-serif;
-}
-}
+  justify-content: center;
+        width: 100%;
+        object-fit: cover;
+        height: 300px;
+        background-color: rgb(20, 17, 17);
+      }
+  
+      // .One1{
+      //   height: 200px;
+      //   width: 50%;
+      //   border-radius: 20px;
+      //   background-color: rgb(87, 78, 78);
+      // }
+      // .One1 > img{
+      //   width: 100%;
+      //   height: 100%;
+      //   border-radius: 20%;
+      // }
+      
+      .One2{
+        height: 130px;
+        width: 40%;
+      
+        background-color: white;
+        position: relative;
+        left: 20px;
+        margin-top: 25px;
+      }
+      .flex-container {
+        display: flex;
+        justify-content: center;
+        font-family: 'Bree Serif', serif;
+   
+      }
+      
+      .flex-container > div {
+
+        width: 90px;
+        margin: 10px;
+        text-align: center;
+        line-height: 20px;
+        font-size: 20px;
+      }
+  
+    
+      .info {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+      }
+      .flex {
+        display: flex;
+        justify-content: center;
+        font-family: 'Bree Serif', serif;
+ 
+      }
+      
+      .flex > div {
+        background-color: #f1f1f1;
+        width: 80%;
+        margin: 10px;
+        
+        text-align: center;
+        line-height: 15px;
+        font-size: 15px;
+      }
+  }
+  

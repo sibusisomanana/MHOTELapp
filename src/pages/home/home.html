@@ -6,7 +6,28 @@
   </div>
 </div>
 
-<ion-content >
+<ion-content>
+  <div class="header">
+      <div class="box" *ngFor="let us of user">   
+          <button ion-fab (click)="profile()"> <img src="{{us.Profile_pic}}" style="border-radius: 30%"></button>
+</div>
+  </div>
+  <br>
+  <div class="container">
+    
+
+<div class="One" *ngFor="let item of rooms">
+
+
+    <div class="One2">
+      <p>{{item.Price}}</p> 
+      <p>{{item.Location}}</p> 
+
+      <button ion-button round (click)="viewRoom($event, item.key)" > VIEW</button> 
+      </div>
+  <div class="One1">
+      <img src="{{item.Pic}}" >
+
 <div class="parent">
   <div class="child" >
     <h1>Home</h1>
@@ -14,32 +35,47 @@
                 <button ion-fab (click)="profile()"> <img src="{{us.Profile_pic}}" style="border-radius: 30%"></button>
     </div>
   </div>
+
 </div>
 
-      <ion-list >
+   
+    
+  </div>
+</div>
+</div>
 
 
+  
+    <!-- <h1>Home</h1>
+    <div class="box" *ngFor="let us of user">   
+                <button ion-fab (click)="profile()"> <img src="{{us.Profile_pic}}" style="border-radius: 30%"></button>
+    </div> -->
+
+
+      <!-- <ion-list > -->
+<!-- 
+        
           <ion-item *ngFor="let item of rooms">
 
 
               <div class="box2">
-                  <img src="{{item.Pic}}" height="300" width="380" style="border-radius: 1%">
-
+                  <img src="{{item.Pic}}" height="150" width="200" style="border-radius: 1%">
+           
                 <div class="box1">
                     <h3><strong>{{ item.Room_name }}</strong></h3>
-
-                    <h3><strong>R {{ item.Price }} p.m</strong></h3>
-                   <button ion-button (click)="viewRoom($event, item.key)" full> VIEW</button>
-                </div>
-
-                </div>
-
+            
+                    <h3><strong>R {{ item.Price }} p.m</strong></h3> 
+                   <!-- <button ion-button (click)="viewRoom($event, item.key)" full> VIEW</button> -->
+                <!-- </div>
+               
+                </div> --> 
+             
             <!-- <h1> {{ item.Hotelname }}</h1> -->
-
-
-            <!-- <button ion-button (click)="viewRoom($event, item.key)" full>VIEW</button>  -->
-          </ion-item>
-      </ion-list>
+           
+<!--        
+             <button ion-button (click)="viewRoom($event, item.key)" full>VIEW</button>  -->
+          <!-- </ion-item> 
+      </ion-list> -->
 
 <!--
 <ion-fab right bottom >
@@ -62,4 +98,7 @@
       <button ion-button (click)="home()" full>Done</button>
     </div>
   </div> -->
+
+
+  
 </ion-content>
