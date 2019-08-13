@@ -6,12 +6,12 @@
 -->
 <ion-header>
   <ion-navbar>
-    <ion-title>Payment</ion-title>
+    <ion-title>Payment Details</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-<!-- <ion-item>
+  <!-- <ion-item>
   <ion-label fixed>Card holder</ion-label>
   <ion-input type="text" [(ngModel)]="holder" value=""></ion-input>
 </ion-item>
@@ -24,5 +24,90 @@
   <ion-input type="text" [(ngModel)]="cvv" value=""></ion-input>
 </ion-item>
 
-<button ion-button (click)="submit()" full>Submit</button>
+<button ion-button (click)="submit()" full>Submit</button>  -->
+<div padding>
+    <ion-segment [(ngModel)]="pet">
+      <ion-segment-button value="kittens">
+        VISA
+      </ion-segment-button>
+      <ion-segment-button value="puppies">
+        MasterCard
+      </ion-segment-button>
+      <ion-segment-button value="dogs">
+          American Express
+        </ion-segment-button>
+    </ion-segment>
+  </div>
+  
+  <div [ngSwitch]="pet">
+    <ion-list *ngSwitchCase="'kittens'">
+      <ion-item>
+        <ion-thumbnail item-start>
+          <img src="https://banner2.kisspng.com/20180425/see/kisspng-credit-card-logo-encapsulated-postscript-visa-epsvector-5ae014bbdedd32.0602433715246348119129.jpg">
+        </ion-thumbnail>
+        <h2>VISA</h2>
+      </ion-item>
+
+    </ion-list>
+
+    <ion-list *ngSwitchCase="'puppies'">
+        <ion-item>
+          <ion-thumbnail item-start>
+            <img src="http://aux2.iconspalace.com/uploads/master-card-payment-icon-256.png">
+          </ion-thumbnail>
+          <h2>MasterCard</h2>
+        </ion-item>
+
+      </ion-list>
+
+
+      
+    <ion-list *ngSwitchCase="'dogs'">
+        <ion-item>
+          <ion-thumbnail item-start>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSMIgWlTOEU-QpkC70SwmafIaLDBCwd2BjgjfxoIYUizFITY-Ks">
+          </ion-thumbnail>
+          <h2>American Express</h2>
+        </ion-item>
+       
+      </ion-list>
+  </div>
+
+  <ion-item>
+      <ion-label>No. of rooms</ion-label>
+      <ion-select [(ngModel)]="rooms">
+        <ion-option value="1">1</ion-option>
+        <ion-option value="2">2</ion-option>
+        <ion-option value="3">3</ion-option>
+        <ion-option value="4">4</ion-option>
+        <ion-option value="5">5</ion-option>
+      </ion-select>
+    </ion-item>
+
+    
+    <ion-item>
+        <ion-label>No. of rooms</ion-label>
+        <ion-select [(ngModel)]="rooms">
+          <ion-option value="1">1</ion-option>
+          <ion-option value="2">2</ion-option>
+          <ion-option value="3">3</ion-option>
+          <ion-option value="4">4</ion-option>
+          <ion-option value="5">5</ion-option>
+        </ion-select>
+      </ion-item>
+
+  <div class="flex">
+      <ion-item>
+        <ion-label float>Check in</ion-label>
+        <ion-datetime displayFormat="YYYY-MM-DD" max="2050-10-31" [(ngModel)]="date_in"></ion-datetime>
+      </ion-item>
+      <ion-item>
+        <ion-label float>Check out</ion-label>
+        <ion-datetime displayFormat="YYYY-MM-DD" max="2050-10-31" [(ngModel)]="date_out"></ion-datetime>
+      </ion-item>
+
+
+      </div>
+
+      <button ion-button round style="width: 40%; margin: auto; margin-top: 10%"  full>SUBMIT </button>
 </ion-content>
