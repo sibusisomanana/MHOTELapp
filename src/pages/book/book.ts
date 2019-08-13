@@ -1,6 +1,6 @@
 import { PaymentPage } from './../payment/payment';
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
 import arry from '../view-room/view-room';
 
 /**
@@ -25,9 +25,16 @@ export class BookPage {
   d = arry ;
   room ;
   price ;
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  pic;
+  adult=0;
+  child=0;
+  constructor(public navCtrl: NavController, public navParams: NavParams, private alert: AlertController) {
     this.price = this.d[0].price;
+    this.pic = this.d[0].pic;
+    console.log(this.child.toString().length);
+    
   }
+  
 
   ionViewDidLoad() {
    // console.log('ionViewDidLoad BookPage');
@@ -55,6 +62,19 @@ export class BookPage {
 
     this.navCtrl.push(PaymentPage);
   }
+  plusAdult(){
+    this.adult = this.adult + 1;
+  }
+  lessAdult(){
+       this.adult = this.adult - 1;
+  }
+  lessChild(){
+      this.child = this.child - 1;    
+  }
+
+  plusChild(){
+    this.child = this.child + 1;
+}
 
   }
 

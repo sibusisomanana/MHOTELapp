@@ -1,16 +1,43 @@
  
 
 
-<ion-content >
-<div class="parent">
-  <div class="child" >
-    <
+<ion-content>
+  <div class="header">
+      <div class="box" *ngFor="let us of user">   
+          <button ion-fab (click)="profile()"> <img src="{{us.Profile_pic}}" style="border-radius: 30%"></button>
+</div>
+  </div>
+  <br>
+  <div class="container">
+    
+
+<div class="One" *ngFor="let item of rooms">
+
+
+    <div class="One2">
+      <p>{{item.Price}}</p> 
+      <p>{{item.Location}}</p> 
+
+      <button ion-button round (click)="viewRoom($event, item.key)" > VIEW</button> 
+      </div>
+  <div class="One1">
+      <img src="{{item.Pic}}" >
+  </div>
+
+</div>
+
+   
+    
+  </div>
+
+
+
+  
     <!-- <h1>Home</h1>
     <div class="box" *ngFor="let us of user">   
                 <button ion-fab (click)="profile()"> <img src="{{us.Profile_pic}}" style="border-radius: 30%"></button>
     </div> -->
-  </div>
-</div>
+
 
       <!-- <ion-list > -->
 <!-- 

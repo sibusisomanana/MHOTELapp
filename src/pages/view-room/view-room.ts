@@ -34,10 +34,11 @@ export class ViewRoomPage {
   //  console.log('ionViewDidLoad ViewRoomPage');
   }
 
-  book(price, room){
+  book(pic,price, room){
     let obj ={
       room:room ,
-      price:price
+      price:price,
+      pic: pic
 
     }
 

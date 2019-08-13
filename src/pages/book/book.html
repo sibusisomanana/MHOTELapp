@@ -4,14 +4,10 @@
   See http://ionicframework.com/docs/components/#navigation for more info on
   Ionic pages and navigation.
 -->
-<ion-header>
-  <ion-navbar>
-    <ion-title>Booking Infomation</ion-title>
-  </ion-navbar>
-</ion-header>
 
-<ion-content padding>
-  <ion-list>
+
+<ion-content >
+  <!-- <ion-list>
 
     <ion-item>
       <ion-label fixed>Check in</ion-label>
@@ -31,6 +27,64 @@
         <ion-input type="number" [(ngModel)]="rooms" value=""></ion-input>
       </ion-item>
     <button ion-button (click)="gotoPay()" full>PAY</button>
-    </ion-list>
+    </ion-list> -->
+
+    <div class="container">
+        <div class="One" >
+         
+            <img src="{{pic}}" >
+
+        </div>
+        <h1>Booking</h1>
+        <div class="flex">
+          <div class="ChIn">
+              <p>Check-In</p>
+              <div> <ion-input type="date" [(ngModel)]="date_in" value=""></ion-input></div>
+          </div>
+        
+
+          <div class="ChOut">
+              <p>Check-Out</p>
+              <div> <ion-input type="date" [(ngModel)]="date_out" value=""></ion-input></div>
+          </div>
+          
+           
+          </div>
+        <div class="flex-container">
+            <p>Adults</p>
+            <div>  <ion-icon ios="ios-remove" md="md-remove" (click)="lessAdult()"></ion-icon></div>
+            <div>{{adult}}</div>  
+             <div> <ion-icon ios="ios-add" md="md-add" (click)="plusAdult()"></ion-icon></div>
+           
+          </div>
+          <div class="flex-container">
+              <p>Children</p>
+              <div> <ion-icon ios="ios-remove" md="md-remove" (click)="lessChild()"></ion-icon></div>
+              <div>{{child}}</div>  
+               <div> <ion-icon ios="ios-add" md="md-add" (click)="plusChild()"></ion-icon></div>
+             
+            </div>
+          
+              <button ion-button round (click)="gotoPay()" full>PAY</button>
+       
+
+          </div>
+
+
+          <ion-item *ngFor="let item of rooms">
+            <div class="info">
+              <div class="child">
+                <ion-icon ios="ios-locate" md="md-locate"></ion-icon>
+              <h2>Located</h2>
+              <p>{{ item.Location }}</p>
+              </div>
+              <div class="child">
+                  <h1>R {{ item.Price}}</h1>
+              </div>
+            </div>
+              
+            </ion-item>
+        
+
 
 </ion-content>

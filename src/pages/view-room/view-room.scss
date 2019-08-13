@@ -1,37 +1,112 @@
 page-view-room {
-    @import url('https://fonts.googleapis.com/css?family=Righteous|Titillium+Web&display=swap');
-    .container{
+  @import url('https://fonts.googleapis.com/css?family=Bree+Serif&display=swap');
+    // .container{
 
-        display: flex;
-        flex-direction: column;
-        font-family: 'Titillium Web', sans-serif;
-        background: linear-gradient(rgba(0, 29, 82, 0.603),rgba(41, 31, 13, 0.781));
-        background-repeat: no-repeat;
-        background-size: cover;
-        height: 100%;
-        width: 100%;
-    }
+    //     display: flex;
+    //     flex-direction: column;
+    //     font-family: 'Titillium Web', sans-serif;
+    //     background: linear-gradient(rgba(0, 29, 82, 0.603),rgba(41, 31, 13, 0.781));
+    //     background-repeat: no-repeat;
+    //     background-size: cover;
+    //     height: 100%;
+    //     width: 100%;
+    // }
     
-      img {
-          border-radius: 10%;
-      }
+  
      .item{
-       text-align: center;
+       text-align: left;
 
      }
       .tv{
-          color: rgb(104, 104, 104);
+          color: #009ac9;
       }
       .coffee{
-        color: rgb(104, 104, 104);
+        color: #009ac9;
       }
       .useer{
-        color: rgb(104, 104, 104);  
+        color: #009ac9;
       }
       h2{
-        font-family: 'Titillium Web', sans-serif;
+        font-family: 'Bree Serif', serif;
       }
       p{
-        font-family: 'Titillium Web', sans-serif;
+        font-family: 'Bree Serif', serif;
       }
+
+    //   .container{
+        
+    //     width: 100%;
+    //     height: 100%;
+      
+    // }
+
+
+    .One{
+      display: flex;
+justify-content: center;
+      width: 100%;
+      object-fit: cover;
+      height: 320px;
+      background-color: rgb(20, 17, 17);
+    }
+
+    // .One1{
+    //   height: 200px;
+    //   width: 50%;
+    //   border-radius: 20px;
+    //   background-color: rgb(87, 78, 78);
+    // }
+    // .One1 > img{
+    //   width: 100%;
+    //   height: 100%;
+    //   border-radius: 20%;
+    // }
+    
+    .One2{
+      height: 130px;
+      width: 40%;
+    
+      background-color: white;
+      position: relative;
+      left: 20px;
+      margin-top: 25px;
+    }
+
+    .flex-container {
+      display: flex;
+      justify-content: center;
+      font-family: 'Bree Serif', serif;
+  
+    }
+    
+    .flex-container > div {
+      background-color: #f1f1f1;
+      
+      width: 100px;
+      margin: 5px;
+      text-align: center;
+      line-height: 50px;
+      font-size: 25px;
+    }
+
+    .flex {
+      display: flex;
+      justify-content: center;
+      font-family: 'Bree Serif', serif;
+    }
+    
+    .flex> div {
+
+
+      width: 100px;
+      margin: 10px;
+      text-align: center;
+      line-height: 50px;
+      font-size: 15px;
+    }
+    .info {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
 }

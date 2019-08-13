@@ -5,52 +5,59 @@
   Ionic pages and navigation.
 -->
 <ion-header>
-  <ion-navbar>
-    <ion-title>Room</ion-title>
-  </ion-navbar>
+
 </ion-header>
-
 <ion-content >
-  <ion-list >
-    <ion-item *ngFor="let item of rooms">
-        <img src="{{item.Pic}}" height="300" width="350" style="border-radius: 5%">
-        <li>
-            <h1> {{ item.Hotelname }}</h1>
+
+    <div class="container">
+    
+   
+        <div class="One" *ngFor="let item of rooms">
+        
+            <img src="{{item.Pic}}" >
+
+        </div>
+
+          </div>
 
 
-         <p><strong>R {{ item.Price }} p.m</strong></p>
-         <br>
-        </li>
+          <ion-item *ngFor="let item of rooms">
+            <div class="info">
+              <div class="child">
+                <ion-icon ios="ios-locate" md="md-locate"></ion-icon>
+              <h2>Located</h2>
+              <p>{{ item.Location }}</p>
+              </div>
+              <div class="child">
+                  <h1>R {{ item.Price}}</h1>
+              </div>
+            </div>
+              
+            </ion-item>
+        
+
+  <div class="flex-container">
+      <div> <ion-icon class="tv" ios="ios-home" md="md-home"></ion-icon></div>
+      <div><ion-icon class="coffee" ios="ios-water" md="md-water"></ion-icon></div>
+      <div><ion-icon class="useer" ios="ios-easel" md="md-easel"></ion-icon></div>  
+    </div>
+
+    <div class="flex">
+        <div>Bedroom</div>
+        <div>Bathroom</div>
+        <div>Livingroom</div>  
+        
+      </div>
+
+      <div class="flex-container">
+          <div>12 sqft</div>
+          <div>20 sqft</div>
+          <div>80 sqft</div>  
+        </div>
+<div *ngFor="let item of rooms">
+    <button ion-button round (click)="book(item.Pic,item.Price, item.Room_name)" full>BOOK</button>
+</div>
+  
 
 
-
-      <button ion-button (click)="book(item.Price, item.Room_name)" full>BOOK</button>
-
-    </ion-item>
-
-</ion-list>
-<ion-card>
-
-    <ion-item *ngFor="let item of rooms">
-      <ion-icon ios="ios-checkmark-circle-outline" md="md-checkmark-circle-outline"></ion-icon>
-      <h2>Features</h2>
-      <p><strong>{{ item.Feautures }}</strong></p>
-    </ion-item>
-
-    <ion-item *ngFor="let item of rooms">
-      <ion-icon ios="ios-locate" md="md-locate"></ion-icon>
-      <h2>Located</h2>
-      <p>{{ item.Location }}</p>
-    </ion-item>
-
-    <ion-item>
-
-
-      <!-- <button ion-button icon-start clear item-end>
-        <ion-icon name="navigate"></ion-icon>
-
-      </button> -->
-    </ion-item>
-
-  </ion-card>
 </ion-content>
