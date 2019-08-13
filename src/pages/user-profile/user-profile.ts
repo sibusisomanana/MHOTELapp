@@ -1,10 +1,11 @@
 import { ProfilePage } from './../profile/profile';
 import { HomePage } from './../home/home';
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, AlertController, ModalController } from 'ionic-angular';
 import * as firebase from 'firebase';
 import { snapshotToArray } from '../../app/environment';
 import { SigninPage } from '../signin/signin';
+import { UpdateProfilePage } from '../update-profile/update-profile';
 
 /**
  * Generated class for the UserProfilePage page.
@@ -23,7 +24,7 @@ export class UserProfilePage {
   user;
   userID = firebase.auth().currentUser.uid;
    ref =  firebase.database().ref();
-   constructor(public navCtrl: NavController, private alert: AlertController) {
+   constructor(public navCtrl: NavController, private alert: AlertController, public modalCtrl: ModalController) {
    //console.log(firebase.auth().currentUser.email);
    this.ref.child('bookings').orderByChild('UID').equalTo(this.userID).on('value', resp => {
      console.log(resp.val());
@@ -77,5 +78,8 @@ export class UserProfilePage {
     });
 
   }
-
+  updateProfile(){
+    const modal = this.modalCtrl.create(UpdateProfilePage);
+    modal.present();
+  }
 }

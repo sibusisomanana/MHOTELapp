@@ -1,3 +1,4 @@
+import { UpdateProfilePage } from './../pages/update-profile/update-profile';
 import { UserProfilePage } from './../pages/user-profile/user-profile';
 import { LastPage } from './../pages/last/last';
 import { PaymentPage } from './../pages/payment/payment';
@@ -28,7 +29,8 @@ import { BoardPage } from '../pages/board/board';
     PaymentPage,
     LastPage,
     UserProfilePage,
-    BoardPage
+    BoardPage,
+    UpdateProfilePage
 
 
 
@@ -49,7 +51,8 @@ import { BoardPage } from '../pages/board/board';
     PaymentPage,
     LastPage,
     UserProfilePage,
-    BoardPage
+    BoardPage,
+    UpdateProfilePage
   ],
   providers: [
     StatusBar,
