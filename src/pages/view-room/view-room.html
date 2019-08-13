@@ -4,50 +4,12 @@
   See http://ionicframework.com/docs/components/#navigation for more info on
   Ionic pages and navigation.
 -->
-<ion-header>
-
-</ion-header>
-<ion-content >
-  <ion-list >
-    <ion-item *ngFor="let item of rooms">
-        <img src="{{item.Pic}}" height="300" width="350" style="border-radius: 5%">
-        <li>
-            <h1> {{ item.Hotelname }}</h1>
-
-
-         <p><strong>R {{ item.Price }} p.m</strong></p>
-         <br>
-        </li>
-
-
-
-      <button ion-button (click)="book(item.Pic,item.Price, item.Room_name)" full>BOOK</button>
-
-    </ion-item>
-
-</ion-list>
-<ion-card>
-
-    <ion-item *ngFor="let item of rooms">
-      <ion-icon ios="ios-checkmark-circle-outline" md="md-checkmark-circle-outline"></ion-icon>
-      <h2>Features</h2>
-      <p><strong>{{ item.Feautures }}</strong></p>
-    </ion-item>
-
-    <ion-item *ngFor="let item of rooms">
-      <ion-icon ios="ios-locate" md="md-locate"></ion-icon>
-      <h2>Located</h2>
-      <p>{{ item.Location }}</p>
-    </ion-item>
-
-
-
-
+<div class="flex3">
     <div class="container">
-    
-   
+
+
         <div class="One" *ngFor="let item of rooms">
-        
+
             <img src="{{item.Pic}}" >
 
         </div>
@@ -58,40 +20,33 @@
           <ion-item *ngFor="let item of rooms">
             <div class="info">
               <div class="child">
-                <ion-icon ios="ios-locate" md="md-locate"></ion-icon>
+
               <h2>Located</h2>
-              <p>{{ item.Location }}</p>
+              <p><ion-icon ios="ios-locate" md="md-locate"></ion-icon> {{ item.Location }}</p>
               </div>
               <div class="child">
                   <h1>R {{ item.Price}}</h1>
               </div>
             </div>
-              
-            </ion-item>
-        
 
-  <div class="flex-container">
-      <div> <ion-icon class="tv" ios="ios-home" md="md-home"></ion-icon></div>
-      <div><ion-icon class="coffee" ios="ios-water" md="md-water"></ion-icon></div>
-      <div><ion-icon class="useer" ios="ios-easel" md="md-easel"></ion-icon></div>  
+            </ion-item>
+
+
+  <div class="flex-container" *ngFor="let r of rooms">
+
+      <div><ion-icon class="tv" ios="ios-home" md="md-home"></ion-icon><p style="font-size: 15px; ">{{r.Hotelname}} </p></div>
+      <div><ion-icon class="coffee" ios="ios-water" md="md-water"></ion-icon><p style="font-size: 15px; ">{{r.Room_size}} </p></div>
+      <div><ion-icon class="useer" ios="ios-easel" md="md-easel"></ion-icon><p style="font-size: 15px; ">{{r.Feautures}} </p></div>
+
+    </div>
+    <div *ngFor="let r of rooms" style="width: 90%; height: 13%; background-color: rgb(224, 224, 224); overflow: auto; margin: auto; margin-top:-5%">
+
+        <p style="padding: 10px; width: 100%;">{{r.Description}}</p>
     </div>
 
-    <div class="flex">
-        <div>Bedroom</div>
-        <div>Bathroom</div>
-        <div>Livingroom</div>  
-        
-      </div>
 
-      <div class="flex-container">
-          <div>12 sqft</div>
-          <div>20 sqft</div>
-          <div>80 sqft</div>  
-        </div>
-<div *ngFor="let item of rooms">
-    <button ion-button round (click)="book(item.Pic,item.Price, item.Room_name)" full>BOOK</button>
+<div *ngFor="let item of rooms" style="padding: 10px">
+    <button ion-button round style="width: 40%; margin: auto; " (click)="book(item.Pic,item.Price, item.Room_name)" full>BOOK</button>
 </div>
-  
-</ion-card>
+</div>
 
-</ion-content>

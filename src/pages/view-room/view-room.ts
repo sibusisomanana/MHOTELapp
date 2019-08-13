@@ -39,8 +39,6 @@ export class ViewRoomPage {
       pic: pic,
       room:room ,
       price:price,
-     
-
     }
 
     arry.push(obj);

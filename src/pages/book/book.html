@@ -31,76 +31,71 @@
 
     <div class="container">
         <div class="One" >
-         
+
             <img src="{{pic}}" >
 
         </div>
         <h1>Booking</h1>
         <div class="flex">
-          <div class="ChIn">
-              <p>Check-In</p>
-              <div> <ion-input type="date" [(ngModel)]="date_in" value=""></ion-input></div>
-          </div>
-        
+          <ion-item>
+            <ion-label float>Check in</ion-label>
+            <ion-datetime displayFormat="YYYY-MM-DD" max="2050-10-31" [(ngModel)]="date_in"></ion-datetime>
+          </ion-item>
+          <ion-item>
+            <ion-label float>Check out</ion-label>
+            <ion-datetime displayFormat="YYYY-MM-DD" max="2050-10-31" [(ngModel)]="date_out"></ion-datetime>
+          </ion-item>
 
-          <div class="ChOut">
-              <p>Check-Out</p>
-              <div> <ion-input type="date" [(ngModel)]="date_out" value=""></ion-input></div>
-          </div>
-          
-           
-          </div>
-        <div class="flex-container">
-            <p>Adults</p>
-            <div>  <ion-icon ios="ios-remove" md="md-remove" (click)="lessAdult()"></ion-icon></div>
-            <div>{{adult}}</div>  
-             <div> <ion-icon ios="ios-add" md="md-add" (click)="plusAdult()"></ion-icon></div>
-           
-          </div>
-          <div class="flex-container">
-              <p>Children</p>
-              <div> <ion-icon ios="ios-remove" md="md-remove" (click)="lessChild()"></ion-icon></div>
-              <div>{{child}}</div>  
-               <div> <ion-icon ios="ios-add" md="md-add" (click)="plusChild()"></ion-icon></div>
-             
-            </div>
-          
-              <button ion-button round (click)="gotoPay()" full>PAY</button>
-       
 
           </div>
 
 
-          <ion-item *ngFor="let item of rooms">
-            <div class="info">
-              <div class="child">
-                <ion-icon ios="ios-locate" md="md-locate"></ion-icon>
-              <h2>Located</h2>
-              <p>{{ item.Location }}</p>
-              </div>
-              <div class="child">
-                  <h1>R {{ item.Price}}</h1>
-              </div>
-            </div>
-              
+            <div>        <div>  <ion-item>
+              <ion-label>No. of kids</ion-label>
+              <ion-select [(ngModel)]="child">
+                <ion-option value="1">1</ion-option>
+                <ion-option value="2">2</ion-option>
+                <ion-option value="3">3</ion-option>
+                <ion-option value="4">4</ion-option>
+                <ion-option value="5">5</ion-option>
+              </ion-select>
+            </ion-item></div></div>
+
+
+              <div>  <ion-item>
+                <ion-label>No. of adults</ion-label>
+                <ion-select [(ngModel)]="adult">
+                  <ion-option value="1">1</ion-option>
+                  <ion-option value="2">2</ion-option>
+                  <ion-option value="3">3</ion-option>
+                  <ion-option value="4">4</ion-option>
+                  <ion-option value="5">5</ion-option>
+                </ion-select>
+              </ion-item></div>
+
+
+
+            <ion-item>
+              <ion-label>No. of rooms</ion-label>
+              <ion-select [(ngModel)]="rooms">
+                <ion-option value="1">1</ion-option>
+                <ion-option value="2">2</ion-option>
+                <ion-option value="3">3</ion-option>
+                <ion-option value="4">4</ion-option>
+                <ion-option value="5">5</ion-option>
+              </ion-select>
             </ion-item>
-        
+
+        <button ion-button round style="width: 40%; margin: auto; margin-top: 10%" (click)="dateV()" full>PAY</button>
+
+          </div>
 
 
 
 
-        <ion-item>
-          <ion-label>No. of rooms</ion-label>
-          <ion-select [(ngModel)]="rooms">
-            <ion-option value="1">1</ion-option>
-            <ion-option value="2">2</ion-option>
-            <ion-option value="3">3</ion-option>
-            <ion-option value="4">4</ion-option>
-            <ion-option value="5">5</ion-option>
-          </ion-select>
-        </ion-item>
 
-    <button ion-button (click)="dateV()" full>PAY</button>
- 
+
+
+
 
 </ion-content>

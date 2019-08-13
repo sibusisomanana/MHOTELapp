@@ -31,10 +31,11 @@ export class BookPage {
   constructor(public navCtrl: NavController, public navParams: NavParams, private alert: AlertController) {
     this.price = this.d[0].price;
     this.pic = this.d[0].pic;
-    console.log(this.child.toString().length);
-    
+    //console.log(this.child.toString().length);
+
+
   }
-  
+
 
   ionViewDidLoad() {
    // console.log('ionViewDidLoad BookPage');
@@ -67,19 +68,7 @@ dateV(){
     this.navCtrl.push(PaymentPage);
   }
 }
-  plusAdult(){
-    this.adult = this.adult + 1;
-  }
-  lessAdult(){
-       this.adult = this.adult - 1;
-  }
-  lessChild(){
-      this.child = this.child - 1;    
-  }
-
-  plusChild(){
-    this.child = this.child + 1;
-}
+ 
 }
 
 
