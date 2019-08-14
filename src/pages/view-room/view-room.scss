@@ -1,5 +1,5 @@
 page-view-room {
-  @import url('https://fonts.googleapis.com/css?family=Bree+Serif&display=swap');
+  @import url('https://fonts.googleapis.com/css?family=Righteous|Titillium+Web&display=swap');
     // .container{
 
     //     display: flex;
@@ -23,17 +23,17 @@ page-view-room {
       .tv{
           color: #009ac9;
       }
-      .coffee{
+      .space{
         color: #009ac9;
       }
       .useer{
         color: #009ac9;
       }
       h2{
-        font-family: 'Bree Serif', serif;
+        font-family: 'Titillium Web', sans-serif;
       }
       p{
-        font-family: 'Bree Serif', serif;
+        font-family: 'Titillium Web', sans-serif;
       }
 
     //   .container{
@@ -88,7 +88,7 @@ justify-content: center;
     .flex-container {
       display: flex;
       justify-content: center;
-      font-family: 'Bree Serif', serif;
+      font-family: 'Titillium Web', sans-serif;
       height: 20%;
 
     }
@@ -106,7 +106,7 @@ justify-content: center;
     .flex {
       display: flex;
       justify-content: center;
-      font-family: 'Bree Serif', serif;
+      font-family: 'Titillium Web', sans-serif;
     }
 
     .flex> div {
@@ -123,4 +123,8 @@ justify-content: center;
       flex-direction: row;
       justify-content: space-between;
     }
+    .button{
+      font-family: 'Titillium Web', sans-serif;
+    }
+
 }

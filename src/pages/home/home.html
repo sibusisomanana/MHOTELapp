@@ -6,6 +6,7 @@
   </div>
 </div>
 <ion-header>
+  <h3>Welcome</h3>
   <ion-navbar color="dark">
     <div class="box" *ngFor="let us of user">
       <button ion-fab (click)="profile()"> <img src="{{us.Profile_pic}}" ></button>
@@ -20,8 +21,8 @@
 <div class="One" *ngFor="let item of rooms">
 
     <div class="One2">
-      <p>R{{item.Price}}</p>
-      <p>{{item.Location}}</p>     <button ion-button round (click)="viewRoom($event, item.key)" > VIEW</button>
+      <h3><strong>R{{item.Price}}.00</strong></h3>
+      <p><strong>{{item.Location}}</strong></p>     <button ion-button round (click)="viewRoom($event, item.key)" > VIEW</button>
 
 
       </div>
@@ -42,6 +43,7 @@
 
   </div>
 </div>
+<br>
 </div>
 
 

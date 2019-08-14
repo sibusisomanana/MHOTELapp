@@ -12,7 +12,9 @@
     </ion-navbar>
 </ion-header>
 <ion-content padding>
+
   <h3>Please select card option</h3>
+  <br>
   <!-- <ion-item>
   <ion-label fixed>Card holder</ion-label>
   <ion-input type="text" [(ngModel)]="holder" value=""></ion-input>
@@ -40,29 +42,31 @@
         </ion-segment-button>
     </ion-segment>
   </div>
+  <br>
   <div [ngSwitch]="pet">
     <ion-list *ngSwitchCase="'kittens'">
       <ion-item>
+         <h1>VISA</h1>
         <ion-thumbnail item-start>
-          <img src="https://banner2.kisspng.com/20180425/see/kisspng-credit-card-logo-encapsulated-postscript-visa-epsvector-5ae014bbdedd32.0602433715246348119129.jpg">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzd_zPcsSOUfrt_YKxpUi69pO1z5x-l4xE--37-txxfiAyk4ja" >
         </ion-thumbnail>
-        <h2>VISA</h2>
+       
       </ion-item>
     </ion-list>
     <ion-list *ngSwitchCase="'puppies'">
         <ion-item>
           <ion-thumbnail item-start>
-            <img src="http://aux2.iconspalace.com/uploads/master-card-payment-icon-256.png">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQjhqgtLWbj1IWkIcapAduE_y3CwiWkaZHFBrsAXIGU0jQ0ADEE" class="big">
           </ion-thumbnail>
-          <h2>MasterCard</h2>
+          <h1>MasterCard</h1>
         </ion-item>
       </ion-list>
     <ion-list *ngSwitchCase="'dogs'">
         <ion-item>
           <ion-thumbnail item-start>
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSMIgWlTOEU-QpkC70SwmafIaLDBCwd2BjgjfxoIYUizFITY-Ks">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSMIgWlTOEU-QpkC70SwmafIaLDBCwd2BjgjfxoIYUizFITY-Ks" class="big">
           </ion-thumbnail>
-          <h2>American Express</h2>
+          <h1>American Express</h1>
         </ion-item>
       </ion-list>
   </div>
@@ -71,7 +75,7 @@
 
 
     <ion-item>
-        <ion-label fixed>Card holder</ion-label>
+        <ion-label fixed class="cool">Card holder</ion-label>
         <ion-input type="text" [(ngModel)]="holder" formControlName="holder"  [class.invalid]="!payForm.controls['holder'].valid &&
         payForm.controls['holder'].touched" ></ion-input>
       </ion-item>
@@ -79,9 +83,9 @@
       payForm.controls['holder'].touched">
      <p style="color: red">Card holder is required</p>
    </ion-item>
-
+<br>
       <ion-item>
-          <ion-label fixed>Card number</ion-label>
+          <ion-label fixed class="cool">Card number</ion-label>
           <ion-input type="text" [(ngModel)]="cardno" formControlName="cardnumber"  [class.invalid]="!payForm.controls['cardnumber'].valid &&
           payForm.controls['cardnumber'].touched"  ></ion-input>
         </ion-item>
@@ -90,9 +94,9 @@
        <p style="color: red">Card number is required</p>
      </ion-item>
 
-
+<br>
      <ion-item>
-        <ion-label fixed>CVV</ion-label>
+        <ion-label fixed class="cool">CVV</ion-label>
         <ion-input type="text" [(ngModel)]="cvv" formControlName="cvv"  [class.invalid]="!payForm.controls['cvv'].valid &&
         payForm.controls['cvv'].touched" ></ion-input>
       </ion-item>
@@ -100,9 +104,9 @@
       payForm.controls['cvv'].touched">
      <p style="color: red">CVV is required</p>
    </ion-item>
-
+<br>
     <ion-item>
-        <ion-label fixed>Expiry date</ion-label>
+        <ion-label fixed class="cool">Expiry date</ion-label>
         <ion-datetime displayFormat="MMM/YYYY" min="2019-09" max="2030" formControlName="expdate"  [class.invalid]="!payForm.controls['expdate'].valid &&
         payForm.controls['expdate'].touched" [(ngModel)]="exp_date"></ion-datetime>
       </ion-item>
@@ -110,6 +114,9 @@
       payForm.controls['expdate'].touched">
      <p style="color: red">CVV is required</p>
    </ion-item>
-    <button ion-button [disabled]="!payForm.valid" (click)="submit()" full>Submit</button>
+   <br>
+    <button ion-button round style="width: 40%; margin: auto; margin-top: 10%" [disabled]="!payForm.valid" (click)="submit()" full>SUBMIT</button>
+
+    
     </form>
 </ion-content>

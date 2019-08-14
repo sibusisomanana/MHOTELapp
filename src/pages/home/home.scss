@@ -12,7 +12,7 @@ page-home {
         width: 100%;
         //height: 100%;
         padding:5px;
-        background-color: #bedceb;
+        background-color: #bbced8;
     }
 
 
@@ -52,11 +52,12 @@ justify-content: center;
     .person{
         font-size: 30px;
     }
-    h2{
-        color:rgb(255, 254, 254);
-    }
-    h1{
-        color: #004280;
+    H3{
+      color: #fcfcfc;
+      font-family: 'Titillium Web', sans-serif;
+  }
+    H2{
+        color: #fcfcfc;
         font-family: 'Titillium Web', sans-serif;
     }
     .coffee{
@@ -77,16 +78,16 @@ justify-content: center;
     }
 
     .One2{
-      height: 130px;
-      width: 50%;
-      border-radius: 10px;
-      background-color: rgb(34, 51, 58);
-      opacity: 0.7;
+      height: 140px;
+      width: 55%;
+      border-radius: 5px;
+      background-color: rgb(16, 46, 59);
+      opacity: 0.8;
       color: white;
       position: absolute;
-      left: 5px;
+      left: 6px;
 
-      margin-top: 40px;
+      margin-top: 25px;
      // padding: 10px;
       padding-left: 3%;
       font-family: 'Titillium Web', sans-serif;
