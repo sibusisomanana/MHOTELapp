@@ -118,6 +118,10 @@ justify-content: center;
       line-height: 50px;
       font-size: 15px;
     }
+
+    .view{
+      font-size: 20px;
+    }
     .info {
       display: flex;
       flex-direction: row;
@@ -126,5 +130,8 @@ justify-content: center;
     .button{
       font-family: 'Titillium Web', sans-serif;
     }
+  h1{
+    font-family: 'Titillium Web', sans-serif;
 
+}
 }

@@ -12,7 +12,7 @@ page-home {
         width: 100%;
         //height: 100%;
         padding:5px;
-        background-color: #bbced8;
+        // background-color: #bbced8;
     }
 
 
@@ -78,19 +78,26 @@ justify-content: center;
     }
 
     .One2{
-      height: 140px;
+      height: 150px;
       width: 55%;
       border-radius: 5px;
-      background-color: rgb(16, 46, 59);
+      background-color: rgba(16, 46, 59, 0.719);
       opacity: 0.8;
       color: white;
       position: absolute;
       left: 6px;
 
-      margin-top: 25px;
+      margin-top: 17px;
      // padding: 10px;
       padding-left: 3%;
       font-family: 'Titillium Web', sans-serif;
+    }
+
+    .view{
+      font-size: 20px;
+    }
+    .heart{
+      font-size: 20px;
     }
 
 
