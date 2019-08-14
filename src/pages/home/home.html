@@ -7,9 +7,10 @@
 </div>
 
 <ion-content>
+
   <div class="header">
       <div class="box" *ngFor="let us of user">   
-          <button ion-fab (click)="profile()"> <img src="{{us.Profile_pic}}" style="border-radius: 30%"></button>
+          <button ion-fab (click)="profile()"> <img src="{{us.Profile_pic}}" ></button>
 </div>
   </div>
   <br>
@@ -19,14 +20,16 @@
 <div class="One" *ngFor="let item of rooms">
 
 
-    <div class="One2">
-      <p>R{{item.Price}}</p> 
-      <p>{{item.Location}}</p>     <button ion-button round (click)="viewRoom($event, item.key)" > VIEW</button> 
+     <div class="One2">
+      <H2>R{{item.Price}}</H2> 
+      <p>{{item.Location}}</p>  
+      
+      <button ion-button round (click)="viewRoom($event, item.key)" > VIEW</button>  
 
   
-      </div>
+      </div> 
   <div class="One1">
-      <img src="{{item.Pic}}" >
+      <img src="{{item.Pic}}"   class="mm" >
 
 <div class="parent">
   <div class="child" >
@@ -42,62 +45,17 @@
     
   </div>
 </div>
+<br>
 </div>
 
 
-  
-    <!-- <h1>Home</h1>
-    <div class="box" *ngFor="let us of user">   
-                <button ion-fab (click)="profile()"> <img src="{{us.Profile_pic}}" style="border-radius: 30%"></button>
-    </div> -->
 
 
-      <!-- <ion-list > -->
-<!-- 
-        
-          <ion-item *ngFor="let item of rooms">
+
+    
 
 
-              <div class="box2">
-                  <img src="{{item.Pic}}" height="150" width="200" style="border-radius: 1%">
-           
-                <div class="box1">
-                    <h3><strong>{{ item.Room_name }}</strong></h3>
-            
-                    <h3><strong>R {{ item.Price }} p.m</strong></h3> 
-                   <!-- <button ion-button (click)="viewRoom($event, item.key)" full> VIEW</button> -->
-                <!-- </div>
-               
-                </div> --> 
-             
-            <!-- <h1> {{ item.Hotelname }}</h1> -->
-           
-<!--        
-             <button ion-button (click)="viewRoom($event, item.key)" full>VIEW</button>  -->
-          <!-- </ion-item> 
-      </ion-list> -->
 
-<!--
-<ion-fab right bottom >
-    <button ion-fab mini>
-        <button ion-fab (click)="profile()">  <ion-icon ios="ios-contact" md="md-contact"></ion-icon></button>
-    </button>
-  </ion-fab> -->
-
-
- <!-- <div class="container">
-
-    <div class="card-wrapper">
-      <div class="card"  *ngFor="let se of user;">
-         <img src="https://images.unsplash.com/photo-1427694012323-fb5e8b0c165b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1366&q=80" alt="card background" class="card-img">
-         <img src="{{se.Profile_pic}}" alt="profile image" class="profile-img">
-         <h1>{{se.Fullname}}</h1>
-         <p class="job-title"><strong>{{se.Cellphone}}</strong></p>
-         <p class="job-title"><strong>{{se.Bio}}</strong></p>
-      </div>
-      <button ion-button (click)="home()" full>Done</button>
-    </div>
-  </div> -->
 
 
   
