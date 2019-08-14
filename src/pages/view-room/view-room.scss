@@ -12,7 +12,10 @@ page-view-room {
     //     width: 100%;
     // }
 
-
+    ion-toolbar {
+      --background: transparent;
+      --ion-color-base: transparent !important;
+      }
      .item{
        text-align: left;
 
@@ -48,6 +51,12 @@ justify-content: center;
       object-fit: cover;
       height: 320px;
       background-color: rgb(20, 17, 17);
+      .back{
+        position: absolute;
+        z-index: 5;
+        left: 0;
+        font-size: 30px;
+      }
     }
 
     // .One1{

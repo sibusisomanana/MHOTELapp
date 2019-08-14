@@ -8,7 +8,10 @@ page-payment {
         width: 100%;
         background-color: #f5f5f5;
     }
-
+    ion-toolbar {
+      --background: transparent;
+      --ion-color-base: transparent !important;
+      }
     h5{
         margin: auto;
     }

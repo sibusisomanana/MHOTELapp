@@ -1,3 +1,4 @@
+import { HomePage } from './../home/home';
 import { BookPage } from './../book/book';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
@@ -46,7 +47,9 @@ export class ViewRoomPage {
 
     this.navCtrl.push(BookPage);
   }
-
+  back(){
+    this.navCtrl.push(HomePage);
+  }
 }
 var arry = new Array()
 

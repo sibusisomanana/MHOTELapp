@@ -5,19 +5,19 @@
     <div class="Aligner-item Aligner-item--bottom"></div>
   </div>
 </div>
-
-<ion-content>
-  <div class="header">
-      <div class="box" *ngFor="let us of user">
-          <button ion-fab (click)="profile()"> <img src="{{us.Profile_pic}}" style="border-radius: 30%"></button>
+<ion-header>
+  <ion-navbar color="dark">
+    <div class="box" *ngFor="let us of user">
+      <button ion-fab (click)="profile()"> <img src="{{us.Profile_pic}}" ></button>
 </div>
-  </div>
-  <br>
+    </ion-navbar>
+</ion-header>
+<ion-content>
+
   <div class="container">
 
 
 <div class="One" *ngFor="let item of rooms">
-
 
     <div class="One2">
       <p>R{{item.Price}}</p>
@@ -26,9 +26,9 @@
 
       </div>
   <div class="One1">
-      <img src="{{item.Pic}}" >
+      <img src="{{item.Pic}}" style="border-radius: 10px" >
 
-<div class="parent">
+<!-- <div class="parent">
   <div class="child" >
 
     <div class="box" *ngFor="let us of user">
@@ -36,7 +36,7 @@
     </div>
   </div>
 
-</div>
+</div> -->
 
 
 

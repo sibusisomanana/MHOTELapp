@@ -4,7 +4,18 @@
   See http://ionicframework.com/docs/components/#navigation for more info on
   Ionic pages and navigation.
 -->
+<ion-header>
+    <ion-toolbar color="primary" >
+        <ion-navbar >
 
+        </ion-navbar>
+    </ion-toolbar>
+    <!-- <ion-navbar class="head">
+      <ion-title  >
+         <p style="color: white">Employees</p>
+      </ion-title>
+      </ion-navbar> -->
+  </ion-header>
 
 <ion-content >
   <!-- <ion-list>
@@ -33,14 +44,15 @@
         <form [formGroup]="payForm" >
         <div class="One" >
 
-            <img src="{{pic}}" >
+            <img src="{{pic}}">
 
         </div>
-        <h1>Booking</h1>
+        <h3>{{room}}</h3>
+
         <div class="flex">
           <ion-item>
             <ion-label float>Check in</ion-label>
-            <ion-datetime displayFormat="YYYY-MM-DD" min="2019-08-14" max="2050-10-31" [(ngModel)]="date_in" formControlName="indate"  [class.invalid]="!payForm.controls['indate'].valid &&
+            <ion-datetime displayFormat="YYYY-MM-DD" min="2019-08-15" max="2050-10-31" [(ngModel)]="date_in" formControlName="indate"  [class.invalid]="!payForm.controls['indate'].valid &&
             payForm.controls['indate'].touched" [(ngModel)]="exp_date"></ion-datetime>
           </ion-item>
           <ion-item no-lines style="background: transparent" class="error-message" *ngIf="!payForm.controls['indate'].valid &&
@@ -49,7 +61,7 @@
        </ion-item>
           <ion-item>
             <ion-label float>Check out</ion-label>
-            <ion-datetime displayFormat="YYYY-MM-DD" min="2019-08-14" max="2050-10-31" [(ngModel)]="date_out" formControlName="outdate"  [class.invalid]="!payForm.controls['outdate'].valid &&
+            <ion-datetime displayFormat="YYYY-MM-DD" min="2019-08-16" max="2050-10-31" [(ngModel)]="date_out" formControlName="outdate"  [class.invalid]="!payForm.controls['outdate'].valid &&
             payForm.controls['outdate'].touched"></ion-datetime>
             <ion-item no-lines style="background: transparent" class="error-message" *ngIf="!payForm.controls['outdate'].valid &&
             payForm.controls['outdate'].touched">

@@ -40,6 +40,7 @@ export class BookPage {
     });
     this.price = this.d[0].price;
     this.pic = this.d[0].pic;
+    this.room = this.d[0].room;
     //console.log(this.child.toString().length);
 
 

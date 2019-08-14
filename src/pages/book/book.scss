@@ -1,9 +1,9 @@
 page-book {
-   
+
 
     @import url('https://fonts.googleapis.com/css?family=Bree+Serif&display=swap');
       // .container{
-  
+
       //     display: flex;
       //     flex-direction: column;
       //     font-family: 'Titillium Web', sans-serif;
@@ -13,11 +13,11 @@ page-book {
       //     height: 100%;
       //     width: 100%;
       // }
-      
-    
+
+
        .item{
          text-align: left;
-  
+
        }
         .tv{
             color: #009ac9;
@@ -34,24 +34,27 @@ page-book {
         p{
           font-family: 'Bree Serif', serif;
         }
-  
+
       //   .container{
-          
+
       //     width: 100%;
       //     height: 100%;
-        
+
       // }
-  
-  
+      ion-toolbar {
+        --background: transparent;
+        --ion-color-base: transparent !important;
+        }
+
       .One{
         display: flex;
   justify-content: center;
         width: 100%;
         object-fit: cover;
-        height: 300px;
+        height: 250px;
         background-color: rgb(20, 17, 17);
       }
-  
+
       // .One1{
       //   height: 200px;
       //   width: 50%;
@@ -63,11 +66,11 @@ page-book {
       //   height: 100%;
       //   border-radius: 20%;
       // }
-      
+
       .One2{
         height: 130px;
         width: 40%;
-      
+
         background-color: white;
         position: relative;
         left: 20px;
@@ -77,9 +80,9 @@ page-book {
         display: flex;
         justify-content: center;
         font-family: 'Bree Serif', serif;
-   
+
       }
-      
+
       .flex-container > div {
 
         width: 90px;
@@ -88,8 +91,8 @@ page-book {
         line-height: 20px;
         font-size: 20px;
       }
-  
-    
+
+
       .info {
         display: flex;
         flex-direction: row;
@@ -99,17 +102,16 @@ page-book {
         display: flex;
         justify-content: center;
         font-family: 'Bree Serif', serif;
- 
+
       }
-      
+
       .flex > div {
         background-color: #f1f1f1;
         width: 80%;
         margin: 10px;
-        
+
         text-align: center;
         line-height: 15px;
         font-size: 15px;
       }
   }
-  
