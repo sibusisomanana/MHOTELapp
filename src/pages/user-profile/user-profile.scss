@@ -129,11 +129,14 @@ page-user-profile {
   }
   .bookings{
     width: 100%;
-    height: 25vh;
-   // background-color: rgb(245, 186, 186);
+    height: 13vh;
+    background-color: rgb(245, 186, 186);
     overflow: auto;
-    flex-wrap: wrap;
     display: flex
+  }
+  h2{
+    font-size: 15px;
+    text-align: center;
   }
 //   .input{
 //     // background-color: red;
