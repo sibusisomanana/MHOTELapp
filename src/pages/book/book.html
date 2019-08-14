@@ -74,7 +74,7 @@
 
 
                    <div>  <ion-item>
-              <ion-label>No. of kids</ion-label>
+              <ion-label  class="cool">No. of kids</ion-label>
               <ion-select [(ngModel)]="child" formControlName="kids"  [class.invalid]="!payForm.controls['kids'].valid &&
               payForm.controls['kids'].touched">
                 <ion-option value="1">1</ion-option>
@@ -92,7 +92,7 @@
 
 
               <div>  <ion-item>
-                <ion-label>No. of adults</ion-label>
+                <ion-label  class="cool">No. of adults</ion-label>
                 <ion-select [(ngModel)]="adult" formControlName="adult"  [class.invalid]="!payForm.controls['adult'].valid &&
                 payForm.controls['adult'].touched">
                   <ion-option value="1">1</ion-option>
@@ -111,7 +111,7 @@
 
 
             <ion-item>
-              <ion-label>No. of rooms</ion-label>
+              <ion-label class="cool">No. of rooms</ion-label>
               <ion-select [(ngModel)]="rooms" formControlName="rooms"  [class.invalid]="!payForm.controls['rooms'].valid &&
               payForm.controls['rooms'].touched">
                 <ion-option value="1">1</ion-option>

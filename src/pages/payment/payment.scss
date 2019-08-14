@@ -43,7 +43,7 @@ page-payment {
         justify-content: space-around;
         width: 95%;
         height: 75%;
-        background-color:white;
+      
         position: relative;
         bottom: 5%;
         border-radius: 10px;
@@ -63,7 +63,7 @@ page-payment {
       width: 60%;
       // background-image: linear-gradient(to right, rgb(64, 122, 156) , rgb(113, 227, 235));
       background-color:  #009ac9;
-      color: white;
+   
       border-radius: 60px;
       font-size: 20px;
       font-family: 'Titillium Web', sans-serif;
@@ -73,6 +73,12 @@ page-payment {
     font-family: 'Titillium Web', sans-serif;
   }
   .ion-input{
+    font-family: 'Titillium Web', sans-serif;
+  }
+  .cool{
+    font-family: 'Titillium Web', sans-serif;
+  }
+  .button{
     font-family: 'Titillium Web', sans-serif;
   }
 

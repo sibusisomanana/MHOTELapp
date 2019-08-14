@@ -23,7 +23,7 @@ page-view-room {
       .tv{
           color: #009ac9;
       }
-      .coffee{
+      .space{
         color: #009ac9;
       }
       .useer{
@@ -122,5 +122,8 @@ justify-content: center;
       display: flex;
       flex-direction: row;
       justify-content: space-between;
+    }
+    .button{
+      font-family: 'Titillium Web', sans-serif;
     }
 }

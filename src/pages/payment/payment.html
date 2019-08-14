@@ -12,7 +12,9 @@
     </ion-navbar>
 </ion-header>
 <ion-content padding>
+  <br>
   <h3>Please select card option</h3>
+  <br>
   <!-- <ion-item>
   <ion-label fixed>Card holder</ion-label>
   <ion-input type="text" [(ngModel)]="holder" value=""></ion-input>
@@ -40,6 +42,7 @@
         </ion-segment-button>
     </ion-segment>
   </div>
+  <br>
   <div [ngSwitch]="pet">
     <ion-list *ngSwitchCase="'kittens'">
       <ion-item>
@@ -71,7 +74,7 @@
 
 
     <ion-item>
-        <ion-label fixed>Card holder</ion-label>
+        <ion-label fixed class="cool">Card holder</ion-label>
         <ion-input type="text" [(ngModel)]="holder" formControlName="holder"  [class.invalid]="!payForm.controls['holder'].valid &&
         payForm.controls['holder'].touched" ></ion-input>
       </ion-item>
@@ -79,9 +82,9 @@
       payForm.controls['holder'].touched">
      <p style="color: red">Card holder is required</p>
    </ion-item>
-
+<br>
       <ion-item>
-          <ion-label fixed>Card number</ion-label>
+          <ion-label fixed class="cool">Card number</ion-label>
           <ion-input type="text" [(ngModel)]="cardno" formControlName="cardnumber"  [class.invalid]="!payForm.controls['cardnumber'].valid &&
           payForm.controls['cardnumber'].touched"  ></ion-input>
         </ion-item>
@@ -90,9 +93,9 @@
        <p style="color: red">Card number is required</p>
      </ion-item>
 
-
+<br>
      <ion-item>
-        <ion-label fixed>CVV</ion-label>
+        <ion-label fixed class="cool">CVV</ion-label>
         <ion-input type="text" [(ngModel)]="cvv" formControlName="cvv"  [class.invalid]="!payForm.controls['cvv'].valid &&
         payForm.controls['cvv'].touched" ></ion-input>
       </ion-item>
@@ -100,9 +103,9 @@
       payForm.controls['cvv'].touched">
      <p style="color: red">CVV is required</p>
    </ion-item>
-
+<br>
     <ion-item>
-        <ion-label fixed>Expiry date</ion-label>
+        <ion-label fixed class="cool">Expiry date</ion-label>
         <ion-datetime displayFormat="MMM/YYYY" min="2019-09" max="2030" formControlName="expdate"  [class.invalid]="!payForm.controls['expdate'].valid &&
         payForm.controls['expdate'].touched" [(ngModel)]="exp_date"></ion-datetime>
       </ion-item>
