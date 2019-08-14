@@ -1,5 +1,5 @@
 page-last {
-
+    @import url('https://fonts.googleapis.com/css?family=Righteous|Titillium+Web&display=swap');
     .content{
         font-family: 10px;
         font-family: "Roboto",sans-serif;
@@ -23,7 +23,7 @@ page-last {
         flex-direction: column;
     }
     .card{
-      width: 32rem;
+      width: 30rem;
       background-color:  #009ac9;
       display: flex;
       flex-direction: column;
@@ -36,7 +36,7 @@ page-last {
     }
     .card .card-img{
         width: 100%;
-        height: 30rem;
+        height: 40rem;
       
         -webkit-clip-path: polygon(0 0, 100% 0%, 100% 78%, 0% 100%);
 clip-path: polygon(0 0, 100% 0%, 100% 78%, 0% 100%);
@@ -44,6 +44,7 @@ clip-path: polygon(0 0, 100% 0%, 100% 78%, 0% 100%);
     }
     .p{
         text-align: center;
+        font-family: 'Titillium Web', sans-serif;
         
     }
     // .profile-img{
