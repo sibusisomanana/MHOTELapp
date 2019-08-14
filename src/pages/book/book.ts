@@ -1,3 +1,4 @@
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { PaymentPage } from './../payment/payment';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
@@ -28,9 +29,18 @@ export class BookPage {
   pic;
   adult=0;
   child=0;
-  constructor(public navCtrl: NavController, public navParams: NavParams, private alert: AlertController) {
+  payForm : FormGroup;
+  constructor(public navCtrl: NavController, public navParams: NavParams, private alert: AlertController, public formBuilder: FormBuilder) {
+    this.payForm = formBuilder.group({
+      indate : [''],
+      outdate: [''],
+      kids: [''],
+      adult: [''],
+      rooms: ['']
+    });
     this.price = this.d[0].price;
     this.pic = this.d[0].pic;
+    this.room = this.d[0].room;
     //console.log(this.child.toString().length);
 
 
@@ -45,11 +55,16 @@ export class BookPage {
   }
 dateV(){
 
-  let date = new Date(this.date_in).valueOf();
-  let dt = new Date(this.date_out).valueOf();
-  this.ouput =  this.people * this.rooms * Number(dt - date);
-  let today = new Date().valueOf();
-  if(today > date || dt < date){
+   let date = new Date(this.date_in).getDate();
+   let dt = new Date(this.date_out).getDate();
+
+console.log(Number(dt - date));
+let checkin = new Date(this.date_in).valueOf();
+let checkout = new Date(this.date_out).valueOf();
+
+   this.ouput =  (this.adult * this.price) + (this.child * this.price/2) + this.rooms * Number(dt - date);
+   let today = new Date().valueOf();
+  if(today > checkin || checkout < checkin){
     this.alert.create({
       title:'Date in error!',
       message:'Please select future!'
@@ -68,7 +83,7 @@ dateV(){
     this.navCtrl.push(PaymentPage);
   }
 }
- 
+
 }
 
 

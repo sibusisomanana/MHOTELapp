@@ -1,6 +1,13 @@
+<ion-header>
+  <ion-navbar >
+    <ion-title  >
+      <!-- <p style="color: white">Employees</p> -->
+    </ion-title>
+    </ion-navbar>
+</ion-header>
 <!--
   <button ion-button (click)="home()">Done</button> -->
-
+<!--
   <ion-navbar >
       <button  ion-button clear style="float: right;" (click)="logout()"> <ion-icon ios="ios-power" md="md-power"></ion-icon></button>
   </ion-navbar>
@@ -37,4 +44,40 @@
 
     </div>
 
+ -->
+ <div class="container" *ngFor="let se of user;">
+  <div class="logo">
+    <div class="image">
+      <img src="{{se.Profile_pic}}" alt="" class="image">
+     <h4 style="text-align: center; margin-top: -5px;"> {{se.Fullname}} </h4>
+    </div>
 
+    </div>
+
+<div class="detailsOne">
+<div class="details">
+    <div class="d1">
+
+       <ion-icon name="call"></ion-icon>{{se.Cellphone}}
+    </div>
+
+    <div class="d1">
+      <ion-icon ios="ios-book" md="md-book"></ion-icon>
+    {{se.Bio}}
+  </div>
+  </div>
+  <div style="height: 50px"></div>
+  <ion-list>
+    <div class="detail1">
+      <h2>Bookings</h2>
+      <div class="bookings" *ngFor="let b of profile" >
+        <ion-item><p > Booked {{b.Room}} on {{b.Created_date}} <br> from {{b.Check_in}} to {{b.Check_out}}</p></ion-item>
+
+
+      </div>
+
+    </div>
+  </ion-list>
+</div>
+    <button class="btn2" (click)="logout()">Log Out</button>
+</div>

@@ -4,6 +4,7 @@ import arr from '../book/book';
 import * as firebase from 'firebase';
 import { LastPage } from '../last/last';
 import { snapshotToArray } from '../../app/environment';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 /**
  * Generated class for the PaymentPage page.
@@ -34,7 +35,15 @@ export class PaymentPage {
   in;
   out;
   date;
-  constructor(public navCtrl: NavController, public navParams: NavParams,  public loading: LoadingController) {
+  exp_date;
+  payForm : FormGroup;
+  constructor(public navCtrl: NavController, public navParams: NavParams,  public loading: LoadingController,  public formBuilder: FormBuilder) {
+    this.payForm = formBuilder.group({
+      cardnumber: ['', Validators.compose([Validators.required, Validators.maxLength(16)])],
+      cvv: ['', Validators.compose([Validators.maxLength(3), Validators.required])],
+      holder: ['', Validators.compose([Validators.required, Validators.minLength(3)])],
+      expdate: ['']
+    });
     console.log(this.d);
     this.room = this.d[0].room;
     this.price = this.d[0].price;
@@ -77,13 +86,15 @@ export class PaymentPage {
       UID : firebase.auth().currentUser.uid,
       Check_in : this.in,
       Check_out : this.out,
-      Created_date: this.date
+      Created_date: this.date,
+      Expiry_date: this.exp_date
     });
      this.price = '';
      this.room = '';
      this.price = '';
      this.cardno = '';
      this.cvv = '';
+     this.exp_date = '';
    // alert.present();
     this.navCtrl.push(LastPage, this.fullname);
   }

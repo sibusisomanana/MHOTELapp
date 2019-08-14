@@ -4,9 +4,15 @@
   See http://ionicframework.com/docs/components/#navigation for more info on
   Ionic pages and navigation.
 -->
-
-
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title  >
+      <!-- <p style="color: white">Employees</p> -->
+    </ion-title>
+    </ion-navbar>
+</ion-header>
 <ion-content padding>
+  <h3>Please select card option</h3>
   <!-- <ion-item>
   <ion-label fixed>Card holder</ion-label>
   <ion-input type="text" [(ngModel)]="holder" value=""></ion-input>
@@ -21,8 +27,7 @@
 </ion-item>
 
 <button ion-button (click)="submit()" full>Submit</button>  -->
-<h3>Please select card option </h3>
-<div padding>
+<div>
     <ion-segment [(ngModel)]="pet">
       <ion-segment-button value="kittens">
         VISA
@@ -35,7 +40,6 @@
         </ion-segment-button>
     </ion-segment>
   </div>
-  
   <div [ngSwitch]="pet">
     <ion-list *ngSwitchCase="'kittens'">
       <ion-item>
@@ -44,9 +48,7 @@
         </ion-thumbnail>
         <h2>VISA</h2>
       </ion-item>
-
     </ion-list>
-
     <ion-list *ngSwitchCase="'puppies'">
         <ion-item>
           <ion-thumbnail item-start>
@@ -54,11 +56,7 @@
           </ion-thumbnail>
           <h2>MasterCard</h2>
         </ion-item>
-
       </ion-list>
-
-
-      
     <ion-list *ngSwitchCase="'dogs'">
         <ion-item>
           <ion-thumbnail item-start>
@@ -66,45 +64,52 @@
           </ion-thumbnail>
           <h2>American Express</h2>
         </ion-item>
-       
       </ion-list>
   </div>
 
-  <ion-item>
-      <ion-label>No. of rooms</ion-label>
-      <ion-select [(ngModel)]="rooms">
-        <ion-option value="1">1</ion-option>
-        <ion-option value="2">2</ion-option>
-        <ion-option value="3">3</ion-option>
-        <ion-option value="4">4</ion-option>
-        <ion-option value="5">5</ion-option>
-      </ion-select>
-    </ion-item>
+  <form [formGroup]="payForm" >
 
-    
+
     <ion-item>
-        <ion-label>No. of rooms</ion-label>
-        <ion-select [(ngModel)]="rooms">
-          <ion-option value="1">1</ion-option>
-          <ion-option value="2">2</ion-option>
-          <ion-option value="3">3</ion-option>
-          <ion-option value="4">4</ion-option>
-          <ion-option value="5">5</ion-option>
-        </ion-select>
+        <ion-label fixed>Card holder</ion-label>
+        <ion-input type="text" [(ngModel)]="holder" formControlName="holder"  [class.invalid]="!payForm.controls['holder'].valid &&
+        payForm.controls['holder'].touched" ></ion-input>
       </ion-item>
+      <ion-item no-lines style="background: transparent" class="error-message" *ngIf="!payForm.controls['holder'].valid &&
+      payForm.controls['holder'].touched">
+     <p style="color: red">Card holder is required</p>
+   </ion-item>
 
-  <div class="flex">
       <ion-item>
-        <ion-label float>Check in</ion-label>
-        <ion-datetime displayFormat="YYYY-MM-DD" max="2050-10-31" [(ngModel)]="date_in"></ion-datetime>
+          <ion-label fixed>Card number</ion-label>
+          <ion-input type="text" [(ngModel)]="cardno" formControlName="cardnumber"  [class.invalid]="!payForm.controls['cardnumber'].valid &&
+          payForm.controls['cardnumber'].touched"  ></ion-input>
+        </ion-item>
+        <ion-item no-lines style="background: transparent" class="error-message" *ngIf="!payForm.controls['cardnumber'].valid &&
+        payForm.controls['cardnumber'].touched">
+       <p style="color: red">Card number is required</p>
+     </ion-item>
+
+
+     <ion-item>
+        <ion-label fixed>CVV</ion-label>
+        <ion-input type="text" [(ngModel)]="cvv" formControlName="cvv"  [class.invalid]="!payForm.controls['cvv'].valid &&
+        payForm.controls['cvv'].touched" ></ion-input>
       </ion-item>
-      <ion-item>
-        <ion-label float>Check out</ion-label>
-        <ion-datetime displayFormat="YYYY-MM-DD" max="2050-10-31" [(ngModel)]="date_out"></ion-datetime>
+      <ion-item no-lines style="background: transparent" class="error-message" *ngIf="!payForm.controls['cvv'].valid &&
+      payForm.controls['cvv'].touched">
+     <p style="color: red">CVV is required</p>
+   </ion-item>
+
+    <ion-item>
+        <ion-label fixed>Expiry date</ion-label>
+        <ion-datetime displayFormat="MMM/YYYY" min="2019-09" max="2030" formControlName="expdate"  [class.invalid]="!payForm.controls['expdate'].valid &&
+        payForm.controls['expdate'].touched" [(ngModel)]="exp_date"></ion-datetime>
       </ion-item>
-
-
-      </div>
-
-      <button ion-button round style="width: 40%; margin: auto; margin-top: 10%"  full>SUBMIT </button>
+      <ion-item no-lines style="background: transparent" class="error-message" *ngIf="!payForm.controls['expdate'].valid &&
+      payForm.controls['expdate'].touched">
+     <p style="color: red">CVV is required</p>
+   </ion-item>
+    <button ion-button [disabled]="!payForm.valid" (click)="submit()" full>Submit</button>
+    </form>
 </ion-content>

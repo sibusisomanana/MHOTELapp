@@ -4,7 +4,18 @@
   See http://ionicframework.com/docs/components/#navigation for more info on
   Ionic pages and navigation.
 -->
+<ion-header>
+    <ion-toolbar color="primary" >
+        <ion-navbar >
 
+        </ion-navbar>
+    </ion-toolbar>
+    <!-- <ion-navbar class="head">
+      <ion-title  >
+         <p style="color: white">Employees</p>
+      </ion-title>
+      </ion-navbar> -->
+  </ion-header>
 
 <ion-content >
   <!-- <ion-list>
@@ -30,54 +41,42 @@
     </ion-list> -->
 
     <div class="container">
+        <form [formGroup]="payForm" >
         <div class="One" >
 
-            <img src="{{pic}}" >
+            <img src="{{pic}}">
 
         </div>
-        <h1>Booking</h1>
+        <h3>{{room}}</h3>
+
         <div class="flex">
           <ion-item>
             <ion-label float>Check in</ion-label>
-            <ion-datetime displayFormat="YYYY-MM-DD" max="2050-10-31" [(ngModel)]="date_in"></ion-datetime>
+            <ion-datetime displayFormat="YYYY-MM-DD" min="2019-08-15" max="2050-10-31" [(ngModel)]="date_in" formControlName="indate"  [class.invalid]="!payForm.controls['indate'].valid &&
+            payForm.controls['indate'].touched" [(ngModel)]="exp_date"></ion-datetime>
           </ion-item>
+          <ion-item no-lines style="background: transparent" class="error-message" *ngIf="!payForm.controls['indate'].valid &&
+          payForm.controls['indate'].touched">
+         <p style="color: red">CVV is required</p>
+       </ion-item>
           <ion-item>
             <ion-label float>Check out</ion-label>
-            <ion-datetime displayFormat="YYYY-MM-DD" max="2050-10-31" [(ngModel)]="date_out"></ion-datetime>
+            <ion-datetime displayFormat="YYYY-MM-DD" min="2019-08-16" max="2050-10-31" [(ngModel)]="date_out" formControlName="outdate"  [class.invalid]="!payForm.controls['outdate'].valid &&
+            payForm.controls['outdate'].touched"></ion-datetime>
+            <ion-item no-lines style="background: transparent" class="error-message" *ngIf="!payForm.controls['outdate'].valid &&
+            payForm.controls['outdate'].touched">
+           <p style="color: red">CVV is required</p>
+         </ion-item>
           </ion-item>
 
 
           </div>
 
 
-            <div>        <div>  <ion-item>
+                   <div>  <ion-item>
               <ion-label>No. of kids</ion-label>
-              <ion-select [(ngModel)]="child">
-                <ion-option value="1">1</ion-option>
-                <ion-option value="2">2</ion-option>
-                <ion-option value="3">3</ion-option>
-                <ion-option value="4">4</ion-option>
-                <ion-option value="5">5</ion-option>
-              </ion-select>
-            </ion-item></div></div>
-
-
-              <div>  <ion-item>
-                <ion-label>No. of adults</ion-label>
-                <ion-select [(ngModel)]="adult">
-                  <ion-option value="1">1</ion-option>
-                  <ion-option value="2">2</ion-option>
-                  <ion-option value="3">3</ion-option>
-                  <ion-option value="4">4</ion-option>
-                  <ion-option value="5">5</ion-option>
-                </ion-select>
-              </ion-item></div>
-
-
-
-            <ion-item>
-              <ion-label>No. of rooms</ion-label>
-              <ion-select [(ngModel)]="rooms">
+              <ion-select [(ngModel)]="child" formControlName="kids"  [class.invalid]="!payForm.controls['kids'].valid &&
+              payForm.controls['kids'].touched">
                 <ion-option value="1">1</ion-option>
                 <ion-option value="2">2</ion-option>
                 <ion-option value="3">3</ion-option>
@@ -85,9 +84,49 @@
                 <ion-option value="5">5</ion-option>
               </ion-select>
             </ion-item>
+            <ion-item no-lines style="background: transparent" class="error-message" *ngIf="!payForm.controls['kids'].valid &&
+            payForm.controls['kids'].touched">
+           <p style="color: red">CVV is required</p>
+         </ion-item>
+        </div>
 
-        <button ion-button round style="width: 40%; margin: auto; margin-top: 10%" (click)="dateV()" full>PAY</button>
 
+              <div>  <ion-item>
+                <ion-label>No. of adults</ion-label>
+                <ion-select [(ngModel)]="adult" formControlName="adult"  [class.invalid]="!payForm.controls['adult'].valid &&
+                payForm.controls['adult'].touched">
+                  <ion-option value="1">1</ion-option>
+                  <ion-option value="2">2</ion-option>
+                  <ion-option value="3">3</ion-option>
+                  <ion-option value="4">4</ion-option>
+                  <ion-option value="5">5</ion-option>
+                </ion-select>
+              </ion-item>
+              <ion-item no-lines style="background: transparent" class="error-message" *ngIf="!payForm.controls['adult'].valid &&
+            payForm.controls['adult'].touched">
+           <p style="color: red">CVV is required</p>
+         </ion-item>
+        </div>
+
+
+
+            <ion-item>
+              <ion-label>No. of rooms</ion-label>
+              <ion-select [(ngModel)]="rooms" formControlName="rooms"  [class.invalid]="!payForm.controls['rooms'].valid &&
+              payForm.controls['rooms'].touched">
+                <ion-option value="1">1</ion-option>
+                <ion-option value="2">2</ion-option>
+                <ion-option value="3">3</ion-option>
+                <ion-option value="4">4</ion-option>
+                <ion-option value="5">5</ion-option>
+              </ion-select>
+            </ion-item>
+            <ion-item no-lines style="background: transparent" class="error-message" *ngIf="!payForm.controls['rooms'].valid &&
+            payForm.controls['rooms'].touched">
+           <p style="color: red">CVV is required</p>
+         </ion-item>
+        <button [disabled]="!payForm.valid" ion-button round style="width: 40%; margin: auto; margin-top: 10%" (click)="dateV()" full>PAY</button>
+</form>
           </div>
 
 

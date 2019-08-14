@@ -3,6 +3,8 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, LoadingController, AlertController } from 'ionic-angular';
 import * as firebase from 'firebase';
 import { HomePage } from '../home/home';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { EmailValidator } from '../../validators/email';
 
 
 /**
@@ -22,7 +24,12 @@ export class SigninPage {
   email;
   password;
   splash = true;
-  constructor(public navCtrl: NavController, public navParams: NavParams, public loading: LoadingController, public alertCtrl: AlertController) {
+  loginForm : FormGroup;
+  constructor(public navCtrl: NavController, public navParams: NavParams, public loading: LoadingController, public alertCtrl: AlertController, public formBuilder: FormBuilder) {
+    this.loginForm = formBuilder.group({
+      email: ['', Validators.compose([Validators.required, EmailValidator.isValid])],
+      password: ['', Validators.compose([Validators.minLength(6), Validators.required])]
+    });
   }
 
   ionViewDidLoad() {

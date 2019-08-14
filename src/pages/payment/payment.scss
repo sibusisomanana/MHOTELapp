@@ -8,7 +8,10 @@ page-payment {
         width: 100%;
         background-color: #f5f5f5;
     }
-  
+    ion-toolbar {
+      --background: transparent;
+      --ion-color-base: transparent !important;
+      }
     h5{
         margin: auto;
     }
@@ -24,9 +27,9 @@ page-payment {
         margin-top: 10px;
     }
     .input{
-        border: 2px solid gray;
+      //  border: 2px solid gray;
         border-radius: 5px;
-        box-shadow: 2px 2px  gray ;
+      //  box-shadow: 2px 2px  gray ;
     }
     .fnb{
         height: 40px;
@@ -60,8 +63,7 @@ page-payment {
       font-size: 20px;
   }
   h3{
-      text-align: center;
-
+    text-align: center;
   }
 
 }
