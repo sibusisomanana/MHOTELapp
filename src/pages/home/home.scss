@@ -62,9 +62,9 @@ justify-content: center;
 
     .One1{
       height: 180px;
-      width: 50%;
+      width: 100%;
       border-radius: 20px;
-      
+      background-color: rgb(114, 114, 114);
     }
     .One1 > img{
       width: 100%;
@@ -94,7 +94,7 @@ top: 50px;
 left: 50px;
 bottom: 50px;
 right: 50px;
-border-radius: 30px;
+border-radius: 20px;
 
 
     //     background-color:rgb(19, 10, 10);
@@ -129,7 +129,7 @@ border-radius: 30px;
 }
 
 .flb {
-  background-color: #3ebffb;
+  background-color: #bfe0f0;
   height:100%;
   width:100%;
   animation: pulse 1s linear forwards;
