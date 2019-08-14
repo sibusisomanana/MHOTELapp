@@ -110,6 +110,9 @@
       payForm.controls['expdate'].touched">
      <p style="color: red">CVV is required</p>
    </ion-item>
-    <button ion-button [disabled]="!payForm.valid" (click)="submit()" full>Submit</button>
+   <br>
+    <button ion-button round [disabled]="!payForm.valid" (click)="submit()" full>Submit</button>
+
+    
     </form>
 </ion-content>
