@@ -11,16 +11,25 @@
 </ion-header>
 
 <ion-content >
+
+    <div class="flex-container">
+        <div>
+            <ion-icon class="see" ios="ios-contact" md="md-contact"></ion-icon>
+            <button class="circle" ion-button clear (click)="takePhoto(0)">Profile picture<ion-icon name="attach"></ion-icon></button>
+            <img [src]="myphoto" alt="my uploadings" *ngIf="myphoto" width="100" height="100">
+        </div>
+      </div>
+      <br>
   <div class="info">
-    <div id="avatar">
-        <button ion-button clear (click)="takePhoto(0)">Profile picture<ion-icon name="attach"></ion-icon></button>
+    <!-- <div id="avatar">
+        <button class="circle" ion-button clear (click)="takePhoto(0)">Profile picture<ion-icon name="attach"></ion-icon></button>
       <img [src]="myphoto" alt="my uploadings" *ngIf="myphoto" width="100" height="100">
-    </div>
+    </div> -->
      
 
-     <ion-input type="text" [(ngModel)]="user.fullname" placeholder="Full name"></ion-input>
-     <ion-input type="tel" [(ngModel)]="user.cellno" placeholder="Cellphone number"></ion-input>
-     <ion-input type="text" [(ngModel)]="user.bio" placeholder="Bio"></ion-input>
+     <ion-input class="line" type="text" [(ngModel)]="user.fullname" placeholder="Full name"></ion-input><br>
+     <ion-input class="line" type="tel" [(ngModel)]="user.cellno" placeholder="Cellphone number"></ion-input><br>
+     <ion-input class="line" type="text" [(ngModel)]="user.bio" placeholder="Bio"></ion-input><br>
      <button ion-button round style="width: 40%; margin: auto; "   (click)="createProfile(user)">Create profile</button>
     
   </div>

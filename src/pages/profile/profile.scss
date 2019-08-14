@@ -35,6 +35,32 @@ page-profile {
         border-radius: 50%;
         width: 300px;
     }
+    .line{
+        box-shadow:  1px 1px 
+    }
+    .circle{
+        height: 40px;
+    }
+
+    .flex-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 250px;
+        background-color: #009ac9;
+      }
+      
+      .flex-container>div {
+        background-color: #f1f1f1;
+        color: white;
+        width: 150px;
+        height: 150px;
+        border-radius: 80px;
+      }
+      .see{
+          font-size: 60px;
+          color: black;
+      }
 
 
 
