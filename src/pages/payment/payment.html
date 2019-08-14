@@ -61,22 +61,49 @@
       </ion-list>
   </div>
 
+  <form [formGroup]="payForm" >
 
-  <ion-item>
-      <ion-label fixed>Card holder</ion-label>
-      <ion-input type="text" [(ngModel)]="holder" ></ion-input>
-    </ion-item>
+
     <ion-item>
-      <ion-label fixed>Card number</ion-label>
-      <ion-input type="text" [(ngModel)]="cardno" ></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-label fixed>CVV</ion-label>
-      <ion-input type="text" [(ngModel)]="cvv" ></ion-input>
-    </ion-item>
+        <ion-label fixed>Card holder</ion-label>
+        <ion-input type="text" [(ngModel)]="holder" formControlName="holder"  [class.invalid]="!payForm.controls['holder'].valid &&
+        payForm.controls['holder'].touched"  placeholder="Card holder"></ion-input>
+      </ion-item>
+      <ion-item no-lines style="background: transparent" class="error-message" *ngIf="!payForm.controls['holder'].valid &&
+      payForm.controls['holder'].touched">
+     <p style="color: red">Card holder is required</p>
+   </ion-item>
+
+      <ion-item>
+          <ion-label fixed>Card number</ion-label>
+          <ion-input type="text" [(ngModel)]="cardno" formControlName="cardnumber"  [class.invalid]="!payForm.controls['cardnumber'].valid &&
+          payForm.controls['cardnumber'].touched"  placeholder="Card number"></ion-input>
+        </ion-item>
+        <ion-item no-lines style="background: transparent" class="error-message" *ngIf="!payForm.controls['cardnumber'].valid &&
+        payForm.controls['cardnumber'].touched">
+       <p style="color: red">Card number is required</p>
+     </ion-item>
+
+
+     <ion-item>
+        <ion-label fixed>CVV</ion-label>
+        <ion-input type="text" [(ngModel)]="cvv" formControlName="cvv"  [class.invalid]="!payForm.controls['cvv'].valid &&
+        payForm.controls['cvv'].touched"  placeholder="CVV"></ion-input>
+      </ion-item>
+      <ion-item no-lines style="background: transparent" class="error-message" *ngIf="!payForm.controls['cvv'].valid &&
+      payForm.controls['cvv'].touched">
+     <p style="color: red">CVV is required</p>
+   </ion-item>
+
     <ion-item>
         <ion-label fixed>Expiry date</ion-label>
-        <ion-datetime displayFormat="MMM/YYYY" min="2019-09" max="2030" [(ngModel)]="exp_date"></ion-datetime>
+        <ion-datetime displayFormat="MMM/YYYY" min="2019-09" max="2030" formControlName="expdate"  [class.invalid]="!payForm.controls['expdate'].valid &&
+        payForm.controls['expdate'].touched" [(ngModel)]="exp_date"></ion-datetime>
       </ion-item>
-    <button ion-button (click)="submit()" full>Submit</button>
+      <ion-item no-lines style="background: transparent" class="error-message" *ngIf="!payForm.controls['expdate'].valid &&
+      payForm.controls['expdate'].touched">
+     <p style="color: red">CVV is required</p>
+   </ion-item>
+    <button ion-button [disabled]="!payForm.valid" (click)="submit()" full>Submit</button>
+    </form>
 </ion-content>

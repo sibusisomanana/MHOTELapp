@@ -4,6 +4,7 @@ import arr from '../book/book';
 import * as firebase from 'firebase';
 import { LastPage } from '../last/last';
 import { snapshotToArray } from '../../app/environment';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 /**
  * Generated class for the PaymentPage page.
@@ -35,7 +36,14 @@ export class PaymentPage {
   out;
   date;
   exp_date;
-  constructor(public navCtrl: NavController, public navParams: NavParams,  public loading: LoadingController) {
+  payForm : FormGroup;
+  constructor(public navCtrl: NavController, public navParams: NavParams,  public loading: LoadingController,  public formBuilder: FormBuilder) {
+    this.payForm = formBuilder.group({
+      cardnumber: ['', Validators.compose([Validators.required, Validators.maxLength(16)])],
+      cvv: ['', Validators.compose([Validators.maxLength(3), Validators.required])],
+      holder: ['', Validators.compose([Validators.required, Validators.minLength(3)])],
+      expdate: ['']
+    });
     console.log(this.d);
     this.room = this.d[0].room;
     this.price = this.d[0].price;
