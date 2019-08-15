@@ -35,17 +35,10 @@ export class ViewRoomPage {
   //  console.log('ionViewDidLoad ViewRoomPage');
   }
 
-  book(pic,price, room){
-    let obj ={
-      pic: pic,
-      room:room ,
-      price:price,
-    }
+  book(key){
+  //  console.log(key);
 
-    arry.push(obj);
-    console.log(arry);
-
-    this.navCtrl.push(BookPage);
+   this.navCtrl.push(BookPage, key);
   }
   back(){
     this.navCtrl.push(HomePage);

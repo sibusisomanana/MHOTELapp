@@ -3,7 +3,7 @@ import { PaymentPage } from './../payment/payment';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
 import arry from '../view-room/view-room';
-
+import * as firebase from 'firebase';
 /**
  * Generated class for the BookPage page.
  *
@@ -29,7 +29,9 @@ export class BookPage {
   pic;
   adult=0;
   child=0;
+  key;
   payForm : FormGroup;
+  ref = firebase.database().ref();
   constructor(public navCtrl: NavController, public navParams: NavParams, private alert: AlertController, public formBuilder: FormBuilder) {
     this.payForm = formBuilder.group({
       indate : [''],
@@ -42,7 +44,8 @@ export class BookPage {
     this.pic = this.d[0].pic;
     this.room = this.d[0].room;
     //console.log(this.child.toString().length);
-
+    this.key = this.navParams.data;
+    this.ref.child('rooms').orderByChild('key').equalTo(this.key).on
 
   }
 

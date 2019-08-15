@@ -65,16 +65,21 @@ justify-content: center;
     }
 
     .One1{
-      height: 180px;
+      // height: 180px;
       width: 100%;
       border-radius: 0px;
+      margin-top: 10px;
+      
 
       //background-color: rgb(114, 114, 114);
     }
     .One1 > img{
       width: 100%;
-      height: 100%;
+       height: 100%;
       // border-radius: 20%;
+      object-fit: cover;
+
+
     }
 
     .One2{

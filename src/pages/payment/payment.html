@@ -14,7 +14,7 @@
 <ion-content padding>
 
   <h3>Please select card option</h3>
-  <br>
+
   <!-- <ion-item>
   <ion-label fixed>Card holder</ion-label>
   <ion-input type="text" [(ngModel)]="holder" value=""></ion-input>
@@ -50,7 +50,7 @@
         <ion-thumbnail item-start>
           <img src="https://investtravelplay.com/wp-content/uploads/2018/11/visa-stock-cover.png" width="50px">
         </ion-thumbnail>
-       
+
       </ion-item>
     </ion-list>
     <ion-list *ngSwitchCase="'puppies'">
@@ -114,9 +114,9 @@
       payForm.controls['expdate'].touched">
      <p style="color: red">CVV is required</p>
    </ion-item>
-   <br>
+
     <button ion-button round style="width: 40%; margin: auto; margin-top: 10%" [disabled]="!payForm.valid" (click)="submit()" full>SUBMIT</button>
 
-    
+
     </form>
 </ion-content>

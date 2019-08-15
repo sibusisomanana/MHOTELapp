@@ -34,11 +34,11 @@
             <div class="info">
               <div class="child">
 
-              <h2>Located</h2>
+              <h2>Location</h2>
               <p><ion-icon ios="ios-locate" md="md-locate"></ion-icon> {{ item.Location }}</p>
               </div>
               <div class="child">
-                  <h1>R {{ item.Price}}</h1>
+                  <h1>R {{ item.Price}}.00</h1>
               </div>
             </div>
 
@@ -53,13 +53,14 @@
 
     </div>
     <div *ngFor="let r of rooms" style="width: 90%; height: 13%; background-color: rgba(241, 241, 241, 0.705); overflow: auto; margin: auto; margin-top:-5%">
-
-        <p style="padding: 10px; width: 100%;">{{r.Description}}</p>
+<h3 style="margin-top: -5px">Description :</h3>
+        <p style="padding: 10px; width: 100%;">
+          {{r.Description}}</p>
     </div>
 
 
 <div *ngFor="let item of rooms" style="padding: 10px">
-    <button ion-button round style="width: 40%; margin: auto; " (click)="book(item.Pic,item.Price, item.Room_name)" full>BOOK</button>
+    <button ion-button round style="width: 40%; margin: auto; " (click)="book(item.key)" full>BOOK</button>
 </div>
 </div>
 

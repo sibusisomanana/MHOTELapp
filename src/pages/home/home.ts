@@ -34,7 +34,7 @@ accountRoot = "AccountPage";
 
   this.ref.on('value', resp => {
     this.rooms = snapshotToArray(resp);
-    //console.log(this.rooms);
+   // console.log(this.rooms);
 
     })
    this.loading.create({
