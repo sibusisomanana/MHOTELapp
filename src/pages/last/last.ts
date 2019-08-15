@@ -31,7 +31,7 @@ export class LastPage {
    ref =  firebase.database().ref('bookings/');
    constructor(public navCtrl: NavController,public navParams: NavParams) {
    //console.log(firebase.auth().currentUser.email);
-    this.r_name = this.d[0].room;
+    this.r_name = this.e[0].room;
     this.price = this.e[0].price;
     this.person = this.navParams.data;
    }

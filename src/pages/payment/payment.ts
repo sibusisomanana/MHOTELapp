@@ -37,18 +37,29 @@ export class PaymentPage {
   date;
   exp_date;
   payForm : FormGroup;
+  key;
   constructor(public navCtrl: NavController, public navParams: NavParams,  public loading: LoadingController,  public formBuilder: FormBuilder) {
+    this.key = this.navParams.data;
+   // console.log(this.key);
+    this.ref2.child('rooms').orderByKey().equalTo(this.key).on('value', resp=>{
+      this.room = snapshotToArray(resp)[0].Room_name;
+      this.price = snapshotToArray(resp)[0].Price;
+     // console.log(this.room);
+
+     })
+
+
     this.payForm = formBuilder.group({
       cardnumber: ['', Validators.compose([Validators.required, Validators.maxLength(16)])],
       cvv: ['', Validators.compose([Validators.maxLength(3), Validators.required])],
       holder: ['', Validators.compose([Validators.required, Validators.minLength(3)])],
       expdate: ['']
     });
-    console.log(this.d);
-    this.room = this.d[0].room;
-    this.price = this.d[0].price;
-    this.in = this.d[0].in;
-    this.out = this.d[0].out;
+    // console.log(this.d);
+     this.room = this.d[0].room;
+     this.price = this.d[0].price;
+     this.in = this.d[0].in;
+     this.out = this.d[0].out;
     this.date = Date();
 
     this.ref2.child('users').orderByChild('UID').equalTo(this.userID).on('value', resp=>{

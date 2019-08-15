@@ -41,14 +41,13 @@
     </ion-list> -->
 
     <div class="container">
-        <form [formGroup]="payForm" >
+        <form [formGroup]="payForm" *ngFor="let item of room">
         <div class="One" >
 
-            <img src="{{pic}}">
+            <img src="{{item.Pic}}">
 
         </div>
-        <h1>{{room}}</h1>
-   
+
 
         <div class="flex">
           <ion-item>
@@ -126,7 +125,7 @@
             payForm.controls['rooms'].touched">
            <p style="color: red">CVV is required</p>
          </ion-item>
-        <button [disabled]="!payForm.valid" ion-button round style="width: 40%; margin: auto; margin-top: 10%" (click)="dateV()" full>PAY</button>
+        <button [disabled]="!payForm.valid" ion-button round style="width: 40%; margin: auto; margin-top: 10%" (click)="dateV(item.key)" full>PAY</button>
 </form>
           </div>
 

@@ -1,24 +1,32 @@
 page-signup {
-     
+
     @import url('https://fonts.googleapis.com/css?family=Righteous|Titillium+Web&display=swap');
     .container{
 
         display: flex;
         flex-direction: column;
         font-family: 'Titillium Web', sans-serif;
-        background: linear-gradient(rgba(37, 140, 199, 0.781)),url("https://images.unsplash.com/photo-1516298957360-a34f6af2d853?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80");
+        background: linear-gradient(rgba(37, 140, 199, 0.781));
         background-repeat: no-repeat;
         background-size: cover;
         height: 100%;
         width: 100%;
     }
-    
+
     .top{
         display: flex;
         height: 100%;
 
     }
-    
+    .input {
+      border-radius: 10px;
+    }
+
+    .email{
+      //  background-color: #cecfcf;
+        border-radius: 120px;
+        height: 50px;
+      }
     .box{
         display: flex;
         flex-direction: column;
@@ -27,22 +35,22 @@ page-signup {
         margin-right: 20px;
         position: relative;
         bottom: 50px;
-      
+
         text-align: center;
 
-   
+
     }
     .bottom-text{
         margin-top: 40px;
         text-align: center;
         font-size: 17px;
         color:rgb(250, 248, 248);
-    
-    }
- 
-  
 
-  
+    }
+
+
+
+
     .person{
         font-size: 30px;
     }
@@ -52,10 +60,10 @@ page-signup {
     h1{
         color:white;
     }
-    
-    
 
-  
 
-    
+
+
+
+
 }

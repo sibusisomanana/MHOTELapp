@@ -1,7 +1,7 @@
 <div id="custom-overlay" [style.display]="splash ? 'flex': 'none'">
   <div class="flb">
     <div class="Aligner-item Aligner-item--top"></div>
-    <img src="assets/imgs/logo1.png">
+    <img src="assets/imgs/icon.png">
     <div class="Aligner-item Aligner-item--bottom"></div>
   </div>
 </div>
@@ -12,11 +12,11 @@
       <div class="top"></div>
       <form [formGroup]="loginForm" >
       <div class="box">
-          <H1>WELCOME</H1>
+          <div><img src="../../assets/imgs/icon.png" width="200" height="200"> </div>
         <h1><strong>LOGIN</strong></h1>
         <ion-list>
 
-          <ion-item>
+          <ion-item class="email">
             <ion-input   [(ngModel)]="email" formControlName="email" type="email"  [class.invalid]="!loginForm.controls['email'].valid &&
             loginForm.controls['email'].touched" placeholder="email"></ion-input>
           </ion-item>
@@ -25,7 +25,7 @@
                  <p style="color: red">Please enter a valid email address.</p>
                </ion-item>
         <br>
-          <ion-item>
+          <ion-item class="email">
             <ion-input type="password" [(ngModel)]="password" formControlName="password"  [class.invalid]="!loginForm.controls['email'].valid &&
             loginForm.controls['email'].touched"  placeholder="Password"></ion-input>
           </ion-item>
@@ -35,8 +35,8 @@
        </ion-item>
         </ion-list>
 
-        <button class="signin" type="submit" [disabled]="!loginForm.valid" (click)="Login()" ion-button full> Sign in <ion-icon ios="ios-navigate" lg="lg-navigate" large></ion-icon></button>
-        <button class="signin" (click)="register()" ion-button full> Create account <ion-icon ios="ios-navigate" lg="lg-navigate" large></ion-icon></button>
+        <button class="signin" type="submit" round [disabled]="!loginForm.valid" (click)="Login()" ion-button full> Sign in <ion-icon ios="ios-navigate" lg="lg-navigate" large></ion-icon></button>
+        <button class="signin" (click)="register()" round ion-button full> Create account <ion-icon ios="ios-navigate" lg="lg-navigate" large></ion-icon></button>
           </div>
           </form>
           </div>

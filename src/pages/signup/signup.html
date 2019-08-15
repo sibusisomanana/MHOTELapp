@@ -6,12 +6,12 @@
 
       <form [formGroup]="loginForm" >
           <div class="box">
-              <H1>WELCOME</H1>
-            <h1><strong>LOGIN</strong></h1>
+            <div><img src="../../assets/imgs/icon.png" width="200" height="200"> </div>
+            <H1>SIGN UP</H1>
             <ion-list>
 
-              <ion-item>
-                <ion-input   [(ngModel)]="email" formControlName="email" type="email"  [class.invalid]="!loginForm.controls['email'].valid &&
+              <ion-item class="email">
+                <ion-input [(ngModel)]="email" formControlName="email" type="email"  [class.invalid]="!loginForm.controls['email'].valid &&
                 loginForm.controls['email'].touched" placeholder="email"></ion-input>
               </ion-item>
               <ion-item no-lines style="background: transparent" class="error-message" *ngIf="!loginForm.controls['email'].valid &&
@@ -19,8 +19,8 @@
                      <p style="color: red">Please enter a valid email address.</p>
                    </ion-item>
             <br>
-              <ion-item>
-                <ion-input type="password" [(ngModel)]="password" formControlName="password"  [class.invalid]="!loginForm.controls['email'].valid &&
+              <ion-item class="email">
+                <ion-input  type="password" [(ngModel)]="password" formControlName="password"  [class.invalid]="!loginForm.controls['email'].valid &&
                 loginForm.controls['email'].touched"  placeholder="Password"></ion-input>
               </ion-item>
               <ion-item no-lines style="background: transparent" class="error-message" *ngIf="!loginForm.controls['password'].valid &&
@@ -30,7 +30,7 @@
             </ion-list>
 
 
-            <button class="signin" [disabled]="!loginForm.valid" (click)="createAccount()" ion-button full> Create account <ion-icon ios="ios-navigate" lg="lg-navigate" large></ion-icon></button>
+            <button class="signin" [disabled]="!loginForm.valid" round (click)="createAccount()" ion-button full> Create account <ion-icon ios="ios-navigate" lg="lg-navigate" large></ion-icon></button>
               </div>
               </form>
 

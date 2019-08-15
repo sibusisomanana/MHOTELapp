@@ -1,3 +1,4 @@
+import { snapshotToArray } from './../../app/environment';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { PaymentPage } from './../payment/payment';
 import { Component } from '@angular/core';
@@ -25,6 +26,7 @@ export class BookPage {
   ouput : any;
   d = arry ;
   room ;
+  room_name;
   price ;
   pic;
   adult=0;
@@ -40,12 +42,18 @@ export class BookPage {
       adult: [''],
       rooms: ['']
     });
-    this.price = this.d[0].price;
-    this.pic = this.d[0].pic;
-    this.room = this.d[0].room;
+   // this.price = this.d[0].price;
+   /// this.pic = this.d[0].pic;
+   // this.room = this.d[0].room;
     //console.log(this.child.toString().length);
     this.key = this.navParams.data;
-    this.ref.child('rooms').orderByChild('key').equalTo(this.key).on
+   this.ref.child('rooms').orderByKey().equalTo(this.key).on('value', resp=>{
+    this.room = snapshotToArray(resp);
+    this.price = snapshotToArray(resp)[0].Price;
+    this.room_name = snapshotToArray(resp)[0].Room_name;
+    console.log(this.room);
+
+   })
 
   }
 
@@ -56,7 +64,7 @@ export class BookPage {
 
 
   }
-dateV(){
+dateV(key){
 
    let date = new Date(this.date_in).getDate();
    let dt = new Date(this.date_out).getDate();
@@ -73,17 +81,17 @@ let checkout = new Date(this.date_out).valueOf();
       message:'Please select future!'
     }).present();
   } else {
-    let obj1 ={
-      room: this.d[0].room ,
-      price: this.ouput,
-      in: this.date_in,
-      out: this.date_out
-    }
+     let obj1 ={
+     room: this.room_name ,
+       price: this.ouput,
+       in: this.date_in,
+       out: this.date_out
+     }
 
-    arr.push(obj1);
-    console.log(arr);
+       arr.push(obj1);
+       console.log(arr);
 
-    this.navCtrl.push(PaymentPage);
+    this.navCtrl.push(PaymentPage,key);
   }
 }
 
