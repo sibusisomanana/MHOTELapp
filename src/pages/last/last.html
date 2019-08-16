@@ -14,21 +14,34 @@
 <button ion-button (click)="goHome()">Home</button> -->
 
 
-<div class="card-wrapper">
-    <div >
-        <h3><strong>Congratulations {{person}}, you've successfully booked this room {{r_name}} and paid R {{price}}</strong> </h3>
-        <br>
-        <ion-icon class="correct" ios="ios-checkmark-circle-outline" md="md-checkmark-circle-outline"></ion-icon>
+
+        <div class="container-fluid">
+            <div class="row">
+                <div class="sub-top text-center mx-auto">
+            
+                    <img src="https://s3.amazonaws.com/collateral.impactdata.com.au/tests/mailbox.png" class="sub-img mx-auto" alt="Mailbox">
+            
+                </div>
+              </div>
+            
+            <div class="row">
+                <div class="sub-bottom mx-auto">
+                  <div class="sub-text text-center">
+                    <h1>Thank you</h1>
+                    <p>Congratulations {{person}}, you've successfully booked this room {{r_name}} and paid R {{price}}.</p>
+                  </div>
+                </div>
+
+            </div>
+            </div>
+    
 
 
 
 
 
        <button class="btn1" ion-button round (click)="goBookings()">View your bookings</button><br>
-        <button class="btn" ion-button round (click)="goHome()">Home</button>
-
-      </div>
+        <button class="btn" ion-button round (click)="goHome()">Home</button> 
 
 
-    </div>
 </ion-content>

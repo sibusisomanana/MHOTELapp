@@ -7,6 +7,7 @@ import { snapshotToArray } from '../../app/environment';
 import arry from '../view-room/view-room';
 import arr from '../book/book';
 import { UserProfilePage } from '../user-profile/user-profile';
+import { AlertController } from 'ionic-angular';
 
 /**
  * Generated class for the LastPage page.
@@ -29,7 +30,7 @@ export class LastPage {
   person;
   // userID = firebase.auth().currentUser.uid;
    ref =  firebase.database().ref('bookings/');
-   constructor(public navCtrl: NavController,public navParams: NavParams) {
+   constructor(public navCtrl: NavController,public navParams: NavParams,public alertCtrl: AlertController) {
    //console.log(firebase.auth().currentUser.email);
     this.r_name = this.e[0].room;
     this.price = this.e[0].price;
@@ -45,5 +46,25 @@ export class LastPage {
   goBookings(){
     this.navCtrl.setRoot(UserProfilePage);
   }
-
+  showConfirm() {
+    const confirm = this.alertCtrl.create({
+      title: 'Use this lightsaber?',
+      message: 'Do you agree to use this lightsaber to do good across the intergalactic galaxy?',
+      buttons: [
+        {
+          text: 'Disagree',
+          handler: () => {
+            console.log('Disagree clicked');
+          }
+        },
+        {
+          text: 'Agree',
+          handler: () => {
+            console.log('Agree clicked');
+          }
+        }
+      ]
+    });
+    confirm.present();
+  }
 }
